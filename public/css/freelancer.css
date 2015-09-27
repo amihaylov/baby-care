@@ -82,7 +82,10 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    background-image: url("../img/bg-babysitter.png");
+    background-size: 100% auto;
+    /* TODO Later to put height according to screen resolution */
+    height: 880px;
 }
 
 header .container {
@@ -142,15 +145,16 @@ header .intro-text .skills {
         padding: 10px 0;
     }
 
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
+    .navbar-fixed-top.navbar-
+    k .navbar-brand {
         font-size: 1.5em;
     }
 }
 
 .navbar {
-    text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    background-color: rgba(255,255,255,0.85);
 }
 
 .navbar a:focus {
@@ -447,4 +451,64 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+}
+
+/* Custom rules outside theme */
+
+.svg{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.navbar-center{
+    width: 100%;
+    text-align: center;
+    float: none;
+    display: inline-block;
+}
+
+.blue{
+    color: #21bdd6;
+}
+
+.red{
+    color: #ee4f6b;
+}
+
+.gray{
+    color: #787878;
+}
+
+
+/* Custom fonts */
+
+@font-face{
+    font-family: lato-italic;
+    src: url("../fonts/Lato-Italic.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0-E007F;
+}
+
+.header-text{
+    color: #21bdd6;
+    font-family: lato-italic;
+    font-size: 1.2em;
+}
+
+.central-message{
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 200px;
+    color: #787878;
+    font-family: lato-italic;
+    font-size: 3em;
+    color: #787878;
+    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FFF;
+    border-radius: 20px;
 }

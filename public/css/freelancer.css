@@ -512,3 +512,52 @@ footer .footer-below {
     border-color: #FFF;
     border-radius: 20px;
 }
+
+.btn-6c{
+    border-color: #ee4f6b;
+    border-radius: 25px;
+    background-color: #ee4f6b;
+    font-family: lato-italic;
+    font-size: 0.8em;
+}
+
+.btn-6c:hover {
+    color: #ee4f6b;
+}
+
+.btn-2i{
+    border-radius: 50px;
+    background: transparent;
+    box-shadow: 0px 0px rgba(0,0,0,0);
+}
+
+.btn-2i:hover{
+    border-radius: 50px;
+    background: transparent;
+    box-shadow: 0px 0px rgba(0,0,0,0);
+}
+
+.req-sitter{
+    font-size: 2em;
+}
+
+.fa-fw{
+    font-size: 2em;
+}
+
+#quiz{
+    background-image: url("../img/quiz-bg.jpg");
+    background-size: 100% auto;
+    /* TODO Check with other resolutions */
+    min-height: 1080px;
+}
+
+#bar{
+    height: 200px;
+}
+
+#bar > svg {
+    height: 100%;
+    display: block;
+}
+

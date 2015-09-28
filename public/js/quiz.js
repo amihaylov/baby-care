@@ -1,6 +1,6 @@
 "use strict"
 	var circle = new ProgressBar.Circle('#bar', {
-		color: '#FCB03C',
+		color: '#21bdd6',
 		strokeWidth: 3,
 		trailWidth: 1,
 		duration: 1500,
@@ -21,11 +21,13 @@
 		[ "What is 8 / 2?", "10", "2", "4", "3" ]
 	];
 	var answers = [];
-	function _(x){
-		return document.getElementById(x);
-	}
+	// No longer needed as we now use jQuery
+	// function _(x){
+	// 	return document.getElementById(x);
+	// }
 	function renderQuestion(){
-		test = _("test");
+		test = $("#test");
+		test.empty();
 
 		circle.animate((pos+1)/5, function(){
 			circle.animate((pos+1)/5);
@@ -35,15 +37,13 @@
 			circle.animate(0.8, function(){
 				circle.animate(1);
 			});
-			test = $("#test");
-			test.empty();
 			// Showing correct answers
 			// test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
 			// _("test_status").innerHTML = "Test Completed";
+			var pageBreak = $("<br>");
 			var h2 = $("<h2></h2>").text("Please submit your contact details and click submit:");
 			var names = $("<h3></h3>").text("Your first and last names:");
 			var inputNames = $("<input>").attr({"type":"text","id":"names","value":"First and Last name"});
-			var pageBreak = $("<br>");
 			var email = $("<h3></h3>").text("Email:");
 			var inputEmail = $("<input>").attr({"type":"text","id":"email","value":"Valid email"});
 			var phone = $("<h3></h3>").text("Phone:");
@@ -62,15 +62,17 @@
 			//SzoneApp.addClient(answers);
 			return false;
 		}
-		_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
 		question = questions[pos][0];
 		chA = questions[pos][1];
 		chB = questions[pos][2];
 		chC = questions[pos][3];
-		test.innerHTML = "<h3>"+question+"</h3>";
-		test.innerHTML += "<button name='choices' onclick='checkAnswer(1)'>"+chA+"</button><br>";
-		test.innerHTML += "<button name='choices' onclick='checkAnswer(2)'>"+chB+"</button><br>";
-		test.innerHTML += "<button name='choices' onclick='checkAnswer(3)'>"+chC+"</button><br><br>";
+
+		var h3 = $("<h3></h3>").text(question);
+		var buttonA = $("<button></button>").text(chA).attr({"name":"choices","onclick":"checkAnswer(1)"});	
+		var buttonB = $("<button></button>").text(chB).attr({"name":"choices","onclick":"checkAnswer(2)"});
+		var buttonC = $("<button></button>").text(chC).attr({"name":"choices","onclick":"checkAnswer(3)"});
+		test.append(h3).append(buttonA).append($("<br>")).append(buttonB).append($("<br>")).append(buttonC);
+		
 		//test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
 	}
 	function checkAnswer(answer){

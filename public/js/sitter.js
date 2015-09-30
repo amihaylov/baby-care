@@ -7,7 +7,7 @@ $( document ).ready(function(){
    	var sitter = {name: $("input#sitter-name").val(),
    				   email: $("input#sitter-email").val(),
              phone: $("input#sitter-phone").val(),
-   				   experience: $("input#sitter-experience").val(),};
+   				   experience: $("#sitter-exp").val(),};
 
    	SzoneApp.addSitter(sitter);
 

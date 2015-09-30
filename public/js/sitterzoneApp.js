@@ -1,10 +1,10 @@
 var SzoneApp = (function(){
 
-	var addSitter = function(client) {
+	var addSitter = function(sitter) {
 		$.ajax({
 			type: "POST",
 			url: '/sitters',
-			data: {client:client}
+			data: sitter
 		});
 	};
 

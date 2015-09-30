@@ -72,16 +72,16 @@
                                   </div>
                                   <div class="modal-body">
                                     <h3>Име:</h3>
-                                    <input type="text" value="First and Last name"></input>
+                                    <input type="text" id="sitter-name"></input>
                                     <h3>Email:</h3>
-                                    <input type="email" value="Valid email"></input>
+                                    <input type="email" id="sitter-email"></input>
                                     <h3>Телефон:</h3>
-                                    <input type="text" value="Phone number"></input>
+                                    <input type="text" id="sitter-phone"></input>
                                     <h3>Разкажи ни за своя опит:</h3>
-                                    <textarea class="quiz-textarea" rows="4" cols="50" maxlength="500"></textarea>
+                                    <textarea class="quiz-textarea" rows="4" cols="50" maxlength="500" id="sitter-exp"></textarea>
                                   </div>
                                   <div class="modal-footer" style="border-style: none;">
-                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal">Submit</button>
+                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal" id="submit-sitter">Submit</button>
                                   </div>
                                 </div>
                               </div>
@@ -171,7 +171,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.9.0/dist/progressbar.js"></script>
     <script src="js/freelancer.js"></script>
+    <script src="js/sitterzoneApp.js"></script>
     <script src="js/quiz.js"></script>
+    <script src="js/sitter.js"></script>
 
     <!-- Load quiz modal on load -->
 

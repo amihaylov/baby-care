@@ -503,7 +503,7 @@ footer .footer-below {
     font-family: lato-italic;
     font-size: 3em;
     color: #787878;
-    width: 1000px;
+    width: 75%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -548,16 +548,98 @@ footer .footer-below {
 #quiz{
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
-    /* TODO Check with other resolutions */
-    min-height: 1080px;
+    /* TODO Check with other resolutions 
+    min-height: 1080px;*/
 }
 
-#bar{
-    height: 200px;
+.bar-container{
+    height: 25%;
+    
 }
 
 #bar > svg {
     height: 100%;
+    max-height: 200px;
     display: block;
 }
 
+#test{
+    background-color: rgba(255,255,255,1);
+}
+
+.test-container{
+    background-color: rgba(255,255,255,1);
+    height: 75%;
+}
+
+.progressbar-text{
+    font-size: 3em;
+}
+
+/* TODO Check with other resolutions */
+.quiz-containter{
+    width: 100%;
+}
+
+.quiz-span{
+    margin-right: 10px;
+    font-size: 0.7em;
+    color: #21bdd6;
+}
+
+.quiz-span:hover{
+    color: #fff;
+}
+
+.modal-header .modal-footer {
+  border-style: none;
+}
+
+.btn-quiz{
+    border-color: #21bdd6;
+    border-radius: 25px;
+    background: transparent;
+    font-family: lato-italic;
+    font-size: 2em;
+    color: #21bdd6;
+    min-width: 200px;
+}
+
+.btn-quiz:hover{
+    background-color: #21bdd6;
+    color: #fff;
+}
+
+.btn-next{
+    font-size: 1em;
+}
+/* If you wish to play with tooltips for cities other than Sofia
+.no-sofia{
+    display: inline;
+    position: relative;
+}
+
+.no-sofia:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+
+.no-sofia:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}*/

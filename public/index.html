@@ -66,18 +66,24 @@
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                  <div class="modal-header">
+                                  <div class="modal-header" style="border-style: none;">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Modal Header</h4>
+                                    <h4 class="modal-title">Стани част от екипа на Sitterzone</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Some text in the modal.</p>
+                                    <h3>Име:</h3>
+                                    <input type="text" value="First and Last name"></input>
+                                    <h3>Email:</h3>
+                                    <input type="email" value="Valid email"></input>
+                                    <h3>Телефон:</h3>
+                                    <input type="text" value="Phone number"></input>
+                                    <h3>Разкажи ни за своя опит:</h3>
+                                    <textarea class="quiz-textarea" rows="4" cols="50" maxlength="500"></textarea>
                                   </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <div class="modal-footer" style="border-style: none;">
+                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal">Submit</button>
                                   </div>
                                 </div>
-
                               </div>
                             </div>
                         </li>
@@ -101,7 +107,7 @@
                 </div>
             </div>
             <div class="row req-sitter" style="margin-top: 100px;">
-                <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" >ЗАЯВИ ДЕТЕГЛЕДАЧ</button></a>
+                <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" data-toggle="modal" data-target="#quizModal">ЗАЯВИ ДЕТЕГЛЕДАЧ</button></a>
             </div>
             <div class="row" style="margin-top: 10px;">
                 <button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button>
@@ -110,20 +116,40 @@
     </header>
 
     <!-- Portfolio Grid Section -->
-    <section id="quiz">
-        <div class="container">
-            <div class="row">
+        <div class="container quiz-containter" id="quiz">
+            
+            <!-- Modal -->
+            <div id="quizModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header" style="border-style: none;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Отговорете на въпросите ни, за да предоставим най-подходящия детегледач за Вашето дете. </p>
+                  </div>
+                  <div class="modal-footer" style="border-style: none;">
+                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Modal -->
+
+            <div class="row bar-container">
                 <div class="col-lg-12 text-center">
                     <div id="bar"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row test-container">
                 <div class="col-lg-12 text-center">
                     <div id="test"></div>
                 </div>
-            </div>
+            </div>  
         </div>
-    </section>
 
 
 
@@ -148,18 +174,17 @@
     <script src="js/quiz.js"></script>
 
     <!-- Load quiz modal on load -->
-    <script type="text/javascript">
-        $(window).load(function(){
-            $('#myModal').modal('show');
-        });
-    </script>
 
     <!-- Smooth transition to quiz -->
     <script type="text/javascript">
         $('#quiz-anchor').click(function(){
             $('html, body').animate({
                 scrollTop: $( $(this).attr('href') ).offset().top
-            }, 1000);
+            }, 1000).then(function(){
+                $(window).load(function(){
+                    $('#quizModal').modal('show');
+                });
+            });
             return false;
         });
     </script>

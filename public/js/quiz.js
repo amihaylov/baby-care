@@ -51,11 +51,11 @@
 			var pageBreak = $("<br>");
 			var h2 = $("<h2></h2>").text("Моля, въведете личните си данни, за да се свържем с Вас:");
 			var names = $("<h3></h3>").text("Име:");
-			var inputNames = $("<input>").attr({"type":"text","id":"names","value":"First and Last name"});
+			var inputNames = $("<input>").attr({"type":"text","id":"names","value":""});
 			var email = $("<h3></h3>").text("Email:");
-			var inputEmail = $("<input>").attr({"type":"email","id":"email","value":"Valid email"});
+			var inputEmail = $("<input>").attr({"type":"email","id":"email","value":""});
 			var phone = $("<h3></h3>").text("Телефон:");
-			var inputPhone = $("<input>").attr({"type":"text","id":"phone","value":"Phone number"});
+			var inputPhone = $("<input>").attr({"type":"text","id":"phone","value":""});
 			test.append(h2).append(names).append(inputNames).append(pageBreak).append(email).append(inputEmail)
 				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(submit);
 

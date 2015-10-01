@@ -545,11 +545,13 @@ footer .footer-below {
     font-size: 2em;
 }
 
+.invisible{
+    display: none;
+}
+
 #quiz{
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
-    /* TODO Check with other resolutions 
-    min-height: 1080px;*/
 }
 
 .bar-container{

@@ -13,4 +13,9 @@ $( document ).ready(function(){
 
    });
 
+   // Show quiz area
+   $("#quiz-anchor").click(function(){
+   		$("#req-sitter").css("display","");
+   });
+
 })

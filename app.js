@@ -4,6 +4,15 @@ var methodOverride = require('method-override');
 var mysql = require('mysql');
 var fs = require('fs');
 var jf = require('jsonfile');
+var nodemailer = require('nodemailer');
+
+var mail = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'absolut.tonko@gmail.com',
+        pass: 'arvv1772'
+    }
+});
 
 var connection = mysql.createConnection({
 	host		 : 'localhost',
@@ -11,6 +20,21 @@ var connection = mysql.createConnection({
 	password : '',
 	database : 'szone'
 });
+
+var questions = [
+	[ "Градът, в който живеете:"],
+	[ "Колко деца има във Вашето семейство?"],
+	[ "На каква възраст е най-малкото сред тях?"],
+	[ "Използвали ли сте досега услугите на професионален детегледач и по какъв повод?"],
+	[ "От какъв тип ангажираност на детегледача имате нужда?"],
+	[ "Какъв вид дейности бихте поверили на професионален детегледач?"],
+	[ "Какви са опасенията Ви, когато поверявате детето си на чужди грижи?"],
+	[ "Каква е сумата, която сте готови да отделите за професионален детегледач според вида ангажираност и дейностите, които включва услугата?"],
+	[ "Моля, споделете с нас допълнителни коментари или опасения относно грижите на детегледача!"],
+	[ "Име:"],
+	[ "Мейл:"],
+	[ "Телефон:"],
+];
 
 // declare our app
 var app = express();
@@ -50,6 +74,18 @@ app.post('/clients', function(req, res){
 	var name = req.body.client[9];
 	var email = req.body.client[10];
 	var phone = req.body.client[11];
+
+	var mailText = "";
+
+	for(var i=0; i<req.body.client.length; i+=1)
+		mailText += questions[i]+' '+req.body.client[i]+'\n';
+
+	mail.sendMail({
+	    from: 'anton@sitterzone.bg',
+	    to: 'gnikolova25@gmail.com',
+	    subject: 'hello',
+	    text: mailText
+	});
 
 	connection.query("INSERT INTO clients(question1, question2, question3, question4, question5, question6, question7, question8, question9, name, email, phone) VALUES('" 
 		+ question1 + "', '" + question2 + "', '" + question3+ "', '" + question4+ "', '" + question5 + 

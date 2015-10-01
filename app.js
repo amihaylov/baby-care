@@ -51,8 +51,7 @@ app.post('/clients', function(req, res){
 	var email = req.body.client[10];
 	var phone = req.body.client[11];
 
-	connection.query("INSERT INTO clients(question1, question2, question3, question4, question5, question6, question7, question8,
-	question9, name, email, phone) VALUES('" 
+	connection.query("INSERT INTO clients(question1, question2, question3, question4, question5, question6, question7, question8, question9, name, email, phone) VALUES('" 
 		+ question1 + "', '" + question2 + "', '" + question3+ "', '" + question4+ "', '" + question5 + 
 		"', '"+ question6 + "', '"+ question7 + "', '"+ question8 + "', '"+ question9 + "', '"+ name+ "', '" + email+ "', '" + phone 
 		+ "');", function(error, rows, fields){

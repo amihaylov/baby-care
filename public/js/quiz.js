@@ -69,8 +69,6 @@
 
 			pos = 0;
 			correct = 0;
-			console.log(answers);
-			//SzoneApp.addClient(answers);
 			return false;
 		}
 		question = questions[pos][0];
@@ -125,6 +123,16 @@
 	function submit(){
 		answers.push($("#names").val(),$("#email").val(),$("#phone").val());
 		SzoneApp.addClient(answers);
+
+		test = $("#test");
+		test.empty();
+		var h3 = $("<h3></h3>");
+
+		if(answers[0]==="София")
+			h3.text("Екипът на SitterZone Ви благодари! Скоро ще се свържем с Вас!");
+		else
+			h3.text("Екипът на SitterZone Ви благодари! За момента услугата на SitterZone се предлага само в София-град. Скоро ще предоставам нашата грижа и във Вашето населено място! ");
+		test.append(h3);
 	}
 
 	window.addEventListener("load", renderQuestion, false);

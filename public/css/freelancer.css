@@ -31,8 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'sansation-italic',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -398,6 +397,8 @@ footer .footer-below {
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #21bdd6;
+    color: #fff;
 }
 
 .portfolio-modal .modal-content h2 {
@@ -483,8 +484,24 @@ footer .footer-below {
 /* Custom fonts */
 
 @font-face{
-    font-family: lato-italic;
-    src: url("../fonts/Lato-Italic.ttf") format('truetype');
+    font-family: 'lato-semibold';
+    src: url("../fonts/Lato-Semibold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0-E007F;
+}
+
+@font-face{
+    font-family: 'lato-bold';
+    src: url("../fonts/Lato-Bold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0-E007F;
+}
+
+@font-face{
+    font-family: 'sansation-italic';
+    src: url("../fonts/Sansation-Italic-webfont.woff") format('woff');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0-E007F;
@@ -492,7 +509,7 @@ footer .footer-below {
 
 .header-text{
     color: #21bdd6;
-    font-family: lato-italic;
+    font-family: 'sansation-italic';
     font-size: 1.2em;
 }
 
@@ -500,10 +517,10 @@ footer .footer-below {
     background-color: rgba(255,255,255,0.5);
     margin-top: 200px;
     color: #787878;
-    font-family: lato-italic;
+    font-family: 'sansation-italic';
     font-size: 3em;
     color: #787878;
-    width: 75%;
+    width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -513,16 +530,29 @@ footer .footer-below {
     border-radius: 20px;
 }
 
+.modal-body{
+    font-family: 'sansation-italic';
+}
+
 .btn-6c{
     border-color: #ee4f6b;
     border-radius: 25px;
     background-color: #ee4f6b;
-    font-family: lato-italic;
+    font-family: 'lato-semibold';
     font-size: 0.8em;
 }
 
 .btn-6c:hover {
     color: #ee4f6b;
+}
+
+.btn-blue{
+    border-color: #21bdd6;
+    background-color: #21bdd6;
+}
+
+.btn-blue:hover{
+    color: #21bdd6;
 }
 
 .btn-2i{
@@ -574,6 +604,10 @@ footer .footer-below {
     height: 75%;
 }
 
+textarea input{
+    color: #000;
+}
+
 .progressbar-text{
     font-size: 3em;
 }
@@ -601,13 +635,24 @@ footer .footer-below {
     border-color: #21bdd6;
     border-radius: 25px;
     background: transparent;
-    font-family: lato-italic;
+    font-family: 'lato-semibold';
     font-size: 2em;
     color: #21bdd6;
     min-width: 200px;
 }
 
 .btn-quiz:hover{
+    background-color: #21bdd6;
+    color: #fff;
+}
+
+.btn-quiz-inverted{
+    background: #fff;
+    color: #21bdd6;
+}
+
+.btn-quiz-inverted:hover{
+    border-color: #fff;
     background-color: #21bdd6;
     color: #fff;
 }

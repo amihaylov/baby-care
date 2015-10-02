@@ -78,18 +78,25 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
-header {
+/* header {
     text-align: center;
     color: #fff;
-    background-image: url("../img/bg-babysitter.png");
+    background: url("../img/bg-babysitter.png") no-repeat;
     background-size: 100% auto;
-    /* TODO Later to put height according to screen resolution */
-    height: 880px;
+    TODO Later to put height according to screen resolution
+} */
+html {
+  background: url("../img/bg-babysitter.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+    background: transparent;
 }
 
 header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
 }
 
 header img {
@@ -111,10 +118,6 @@ header .intro-text .skills {
 }
 
 @media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
 
     header .intro-text .name {
         font-size: 4.75em;
@@ -515,7 +518,7 @@ footer .footer-below {
 
 .central-message{
     background-color: rgba(255,255,255,0.5);
-    margin-top: 200px;
+    margin-top: 16%;
     color: #787878;
     font-family: 'sansation-italic';
     font-size: 3em;
@@ -524,10 +527,41 @@ footer .footer-below {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     border-style: solid;
     border-width: 1px;
     border-color: #FFF;
     border-radius: 20px;
+    text-align: center;
+    padding:  1px;
+}
+.modal-dialog p {
+    font-size: 25px;
+    text-align: center;
+    line-height: 45px;
+}
+.modal-footer .btn-quiz-inverted {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+.modal-dialog {
+    margin-top: 10%;
+}
+.modal-content {
+    background: none !important;
+    border: none;
+    box-shadow: none;
+}
+.modal .close {
+    color: #fff;
+    opacity: 1;
+}
+.modal-backdrop.in {
+    opacity: 1;
+}
+.modal-backdrop {
+    background: rgba(33, 189, 214, .87);
 }
 
 .modal-body{
@@ -579,11 +613,11 @@ footer .footer-below {
     display: none;
 }
 
-#quiz{
+/* #quiz{
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
 }
-
+ */
 .bar-container{
     height: 25%;
 
@@ -595,14 +629,15 @@ footer .footer-below {
     display: block;
 }
 
+/*
 #test{
     background-color: rgba(255,255,255,1);
 }
 
-.test-container{
+ .test-container{
     background-color: rgba(255,255,255,1);
     height: 75%;
-}
+} */
 
 textarea input{
     color: #000;
@@ -690,3 +725,187 @@ textarea input{
     position: absolute;
     z-index: 99;
 }*/
+
+/* valkov css 01/10/15 */
+.navbar-brand img {
+    margin: 0 auto;
+}
+.navbar-brand {
+    display: inline-block;
+    float: none;
+    margin: 0 auto !important;
+    padding: 0;
+    height: auto;
+    min-width: 100%;
+}
+.collapse .navbar-right {
+    margin-top: -74px;
+}
+.navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-header {
+    width: 100%;
+}
+.collapse {
+    display: block;
+    visibility: visible;
+    margin: 0 !important;
+}
+.page-scroll .btn-6:hover {
+    background: #1f9cb0;
+}
+.page-scroll .btn-6 {
+    background: #21bdd6;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.btn-req-sitter:hover {
+    background: #CA2C48;
+    color: #fff;
+}
+.btn-req-sitter {
+    border: none;
+    font-family: 'Lato', sans-serif;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.test-container h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    color: #5e5e5e;
+    font-weight: 600;
+    text-transform: inherit;
+}
+.test-container .btn-quiz:hover .quiz-span {
+    color: #fff;
+}
+.header-text p {
+    position: absolute;
+    left: 15px;
+    top: -5px;
+}
+.page-scroll .modal-dialog {
+    margin-top: 0;
+}
+/* .test-container .quiz-span {
+    font-size: 22px;
+    font-family: 'Lobster', cursive;
+    font-style: italic;
+    font-weight: 500;
+    display: none;
+    color: #1dbbd4;
+    text-transform: none;
+    font-size: 27px;
+} */
+.test-container .btn-quiz {
+    text-transform: none;
+    width: 100%;
+    margin-left: 0;
+    max-height: auto;
+    height: 100%;
+    white-space: inherit;
+    text-align: left;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.btn-2i {
+    margin: 0 auto;
+    width: 90px;
+    display: block;
+}
+#quiz-anchor {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 350px;
+}
+.req-sitter {
+    margin-top: 0 !important;
+}
+.parent{
+    display:table;
+}
+.child{
+    display:table-cell;
+    vertical-align:middle;
+}
+#bar > svg {
+    height: 140px;
+    margin-top: 200px;
+}
+.bar-container .col-lg-12.text-center{
+    height: 400px;
+    background: url("../img/quiz-bg-400px.png") no-repeat center top;
+ /*    -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover; */
+}
+.test-container {
+    background: #fff;
+    padding-bottom: 70px;
+}
+.test-container #test {
+    padding: 90px 0;
+}
+textarea {
+    resize: none;
+}
+#submit-sitter {
+    background: #fff;
+    color: #21bdd6;
+    margin: 0 auto;
+    display: block;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .navbar-fixed-top {
+        position: relative;
+    }
+    .central-message {
+        font-size: 26px;
+        padding: 30px;
+        width: 100%;
+    }
+    .collapse .navbar-right {
+        margin-top: 0px;
+    }
+    .header-text p {
+        top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text p {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    #quiz-anchor .btn {
+        white-space: inherit;
+    }
+    #quiz-anchor {
+        width: 100%;
+    }
+}
+
+/* end valkov css 01/10/15 */

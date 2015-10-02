@@ -38,18 +38,19 @@
 </head>
 
 <body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-center">
-                    <ul class="nav navbar-nav navbar-left">
+                    <div class="header-text">
                         <p><span class="flag-icon flag-icon-bg" style="margin-right: 10px;"></span><span class="flag-icon flag-icon-gb"></span></p>
-                    </ul>
-                    <img src="img/logo.png" alt="">
+                        <a href="#" class="navbar-brand"><img src="img/logo.png" class="img-responsive"></a>
+                        Грижа<span class="gray">.</span>
+                        Опит<span class="gray">.</span>
+                        Доверие<span class="gray">.</span>
+                    </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hidden">
                             <a href="#page-top"></a>
@@ -63,7 +64,7 @@
                         </li>
                          -->
                         <li class="page-scroll">
-                            <button class="btn btn-6 btn-6c btn-blue" data-toggle="modal" data-target="#myModal">СТАНИ ЕДИН ОТ НАС</button>
+                            <button class="btn btn-6 btn-6c" data-toggle="modal" data-target="#myModal">СТАНИ ЕДИН ОТ НАС</button>
                             <!-- Modal -->
                             <div id="myModal" class="modal fade" role="dialog">
                               <div class="modal-dialog">
@@ -75,24 +76,29 @@
                                     <h4 class="modal-title">Стани част от екипа на Sitterzone</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <h3>Име:</h3>
-                                    <input type="text" id="sitter-name">
-                                    <h3>Email:</h3>
-                                    <input type="email" id="sitter-email">
-                                    <h3>Телефон:</h3>
-                                    <input type="text" id="sitter-phone">
+                                    <div class="form-group">
+                                        <h3>Име:</h3>
+                                        <input type="text" id="sitter-name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Email:</h3>
+                                        <input type="email" id="sitter-email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Телефон:</h3>
+                                        <input type="text" id="sitter-phone" class="form-control">
+                                    </div>
                                     <h3>Разкажи ни за своя опит:</h3>
-                                    <textarea class="quiz-textarea" rows="4" cols="50" maxlength="500" id="sitter-exp"></textarea>
+                                    <textarea class="quiz-textarea form-control" rows="4" cols="50" maxlength="500" id="sitter-exp"></textarea>
                                   </div>
                                   <div class="modal-footer" style="border-style: none;">
-                                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal" id="submit-sitter">Submit</button>
+                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal" id="submit-sitter">Потвърди</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
                         </li>
-                    </ul>               
-                    <div class="header-text">Грижа<span class="gray">.</span> Опит<span class="gray">.</span> Доверие<span class="gray">.</span></div>
+                    </ul>
                 </ul>
 
             </div>
@@ -100,6 +106,7 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <!-- Navigation -->
 
     <!-- Header -->
     <header>
@@ -121,7 +128,7 @@
 
     <!-- Portfolio Grid Section -->
         <div class="container quiz-containter invisible" id="quiz">
-            
+
             <!-- Modal -->
             <div id="quizModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -152,7 +159,7 @@
                 <div class="col-lg-12 text-center">
                     <div id="test"></div>
                 </div>
-            </div>  
+            </div>
         </div>
 
 

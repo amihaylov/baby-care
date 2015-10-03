@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'sansation-italic',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'sansation-light',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -84,7 +84,7 @@ header {
     background-image: url("../img/bg-babysitter.png");
     background-size: 100% auto;
     /* TODO Later to put height according to screen resolution */
-    height: 880px;
+    height: 100%;
 }
 
 header .container {
@@ -141,7 +141,10 @@ header .intro-text .skills {
     }
 
     .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
+        /* Disappear
+        display: none;*/
+        /* Shrink */
+        padding: 10px 0; 
     }
 
     .navbar-fixed-top.navbar-
@@ -492,8 +495,8 @@ footer .footer-below {
 }
 
 @font-face{
-    font-family: 'lato-bold';
-    src: url("../fonts/Lato-Bold.ttf") format('truetype');
+    font-family: 'sansation-light';
+    src: url("../fonts/Sansation-Light-webfont.woff") format('woff');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0-E007F;
@@ -546,6 +549,20 @@ footer .footer-below {
     color: #ee4f6b;
 }
 
+.btn-back{
+    border-color: #21bdd6;
+    border-radius: 25px;
+    background-color: #fff;
+    font-family: 'lato-semibold';
+    font-size: 0.8em;
+    color: #21bdd6;
+}
+
+.btn-back:hover {
+    color: #fff;
+    background-color: #21bdd6;
+}
+
 .btn-blue{
     border-color: #21bdd6;
     background-color: #21bdd6;
@@ -584,9 +601,12 @@ footer .footer-below {
     background-size: 100% auto;
 }
 
+.empty-container{
+    height: 20%;
+}
+
 .bar-container{
-    height: 25%;
-    
+    height: 25%; 
 }
 
 #bar > svg {
@@ -601,7 +621,7 @@ footer .footer-below {
 
 .test-container{
     background-color: rgba(255,255,255,1);
-    height: 75%;
+    height: 55%;
 }
 
 textarea input{
@@ -615,6 +635,10 @@ textarea input{
 /* TODO Check with other resolutions */
 .quiz-containter{
     width: 100%;
+}
+
+.quiz-question{
+    font-family: 'sansation-italic';
 }
 
 .quiz-span{

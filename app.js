@@ -83,7 +83,7 @@ app.post('/clients', function(req, res){
 	mail.sendMail({
 	    from: 'anton@sitterzone.bg',
 	    to: 'gnikolova25@gmail.com',
-	    subject: 'hello',
+	    subject: 'New client request recieved',
 	    text: mailText
 	});
 
@@ -120,6 +120,15 @@ app.post('/sitters', function(req, res){
 	var email = req.body.email;
 	var phone = req.body.phone;
 	var experience = req.body.experience;
+
+	var mailText="Name: "+name+"\nEmail: "+email+"\nPhone: "+phone+"\nExperience: "+experience;
+
+	mail.sendMail({
+	    from: 'anton@sitterzone.bg',
+	    to: 'gnikolova25@gmail.com',
+	    subject: 'New babysitter request recieved',
+	    text: mailText
+	});
 
 	connection.query("INSERT INTO sitters(name, email, phone, experience) VALUES('" + name+ "', '" + email+ "', '" + phone +
 		"', '" + experience	+ "');", function(error, rows, fields){

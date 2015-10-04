@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sitterzone</title>
+
+    <!-- Custom buttons and transform buttons -->
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" class="index">
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-center">
+                    <div class="header-text">
+                        <p><a href="index.html"><span class="flag-icon flag-icon-bg" style="margin-right: 10px;"></span></a><a href="index-en.html"><span class="flag-icon flag-icon-gb"></span></a></p>
+                        <a href="#" class="navbar-brand"><img src="img/logo.png" class="img-responsive"></a>
+                        Care<span class="gray">.</span>
+                        Experience<span class="gray">.</span>
+                        Trust<span class="gray">.</span>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <!-- Reuse for the links
+                        <li class="page-scroll">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#about">About</a>
+                        </li>
+                         -->
+                        <li class="page-scroll">
+                            <button class="btn btn-6 btn-6c" data-toggle="modal" data-target="#myModal">JOIN US</button>
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header" style="border-style: none;">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">Become part of the Sitterzone team</h2>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="form-group">
+                                        <h3>Name:</h3>
+                                        <input type="text" id="sitter-name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Email:</h3>
+                                        <input type="email" id="sitter-email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Phone:</h3>
+                                        <input type="text" id="sitter-phone" class="form-control">
+                                    </div>
+                                    <h3>Tell us about your experience:</h3>
+                                    <textarea class="quiz-textarea form-control" rows="7" cols="50" maxlength="500" id="sitter-exp"></textarea>
+                                  </div>
+                                  <div class="modal-footer" style="border-style: none;">
+                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal" id="submit-sitter">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                    </ul>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- Navigation -->
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row empty-holder"></div>
+                    <div class="central-message">The easiest and most reliable way <br />to find <span class="red">a professional sitter</span> <br />for your child!
+                    </div>
+                </div>
+            </div>
+            <div class="row req-sitter" style="margin-top: 100px;">
+                <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" data-toggle="modal" data-target="#quizModal" id="hide-header">GET A SITTER</button></a>
+            </div>
+            <div class="row fb-btn">
+                <a href="https://www.facebook.com/SitterZone-427106204150029"><button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+        <div class="container quiz-containter invisible" id="quiz">
+
+            <!-- Modal -->
+            <div id="quizModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header" style="border-style: none;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Please answer a few questions and we will provide your child with the most suitable sitter! </p>
+                  </div>
+                  <div class="modal-footer" style="border-style: none;">
+                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal">OK</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Modal -->
+
+            <div class="row bar-container">
+                <div class="col-lg-12 text-center">
+                    <div id="bar"></div>
+                </div>
+            </div>
+            <div class="row test-container">
+                <div class="col-lg-12 text-center">
+                    <div id="test"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.9.0/dist/progressbar.js"></script>
+    <script src="js/freelancer.js"></script>
+    <script src="js/sitterzoneApp.js"></script>
+    <script src="js/quiz-en.js"></script>
+    <script src="js/sitter.js"></script>
+
+    <!-- Load quiz modal on load -->
+
+    <!-- Smooth transition to quiz,
+        also hide first part -->
+    <script type="text/javascript">
+        $('#quiz-anchor').click(function(){
+            $("#quiz").removeClass("invisible");
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 1000).then(function(){
+                $(window).load(function(){
+                    $('#quizModal').modal('show');
+                });
+            });
+            return false;
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('#hide-header').bind('click',function(){
+            $('header').addClass('invisible');
+        });
+    </script>
+
+    <!-- Override bootstrap modal style -->
+    <script type="text/javascript">
+        $(".modal-content").each(function(){$(this)
+            .css("background-color","#21bdd6")
+            .css("color","#fff")});
+
+        $("input, textarea").each(function(){$(this)
+            .css("color","#000")});
+    </script>
+
+</body>
+
+</html>

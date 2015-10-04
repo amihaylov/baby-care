@@ -668,6 +668,10 @@ textarea input{
     color: #fff;
 }
 
+.quiz-question{
+    font-size: 2em;
+}
+
 .modal-header .modal-footer {
   border-style: none;
 }
@@ -677,7 +681,7 @@ textarea input{
     border-radius: 25px;
     background: transparent;
     font-family: 'lato-semibold';
-    font-size: 2em;
+    font-size: 1.3em;
     color: #21bdd6;
     min-width: 200px;
     text-align: center;
@@ -697,10 +701,6 @@ textarea input{
     border-color: #fff;
     background-color: #21bdd6;
     color: #fff;
-}
-
-.btn-next{
-    font-size: 1em;
 }
 
 .btn-back{
@@ -868,6 +868,21 @@ textarea {
 }
 
 /* responsive */
+@media (max-width: 1600px) {
+    .empty-holder{
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 1280px){
+    .empty-holder{
+        padding-top: 50px;
+    }
+    .central-message{
+        font-size: 2em;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-fixed-top {
         position: relative;

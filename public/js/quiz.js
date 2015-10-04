@@ -65,7 +65,7 @@
 			var legalNotice = $("<div></div>").text("Личните Ви данни ще бъдат използвани само за целите на услугата ни и няма да бъдат предоставени на трети лица! ")
 								.addClass("row legal-notice");
 			var submit = $("<button></button>").attr({"onclick":"submit()"}).text("Потвърди")
-							.addClass("btn btn-4 btn-4a btn-quiz btn-next");
+							.addClass("btn btn-4 btn-4b btn-back");
 			test.append(legalNotice).append(submit);
 			
 			pos = 0;

@@ -3,9 +3,9 @@
 		[ "City of residence", "Sofia", "Plovdiv", "Burgas", "Varna", "St Zagora", "Ruse", "button" ],
 		[ "How many children do you have in your family?", "1", "2", "3", "4", "More than 4", "button" ],
 		[ "How old is the youngest one?", " > 1 year old", "1-2 years old", "2-3 years old", "3-4 years old.", "4-5 years old.", "Over 5 years old", "button" ],
-		[ "Have you ever used the services of a professional babysitter and in what cases??", "No, I have not", "Yes, while I am at work", "Yes, when I go out in the evening", "Yes, when I cannot take my child on a business trip.", "Yes, as extra help at home", "button" ],
-		[ "For what kind of commitment do you need a sitter?"," Full-time or more than 10 hours a day","Part time or less than 6 hours","Periodically, in particular case/days","I need her/him to live at home with us.","button"],
-		[ "What kind of responsibilities would you entrust to your sitter?","Food preparation, nutrition of your child", "Hygiene care", "Education/mentoring/preparation for school","Walks","Out-of-the town trips","Play dates","For escort / transport (e.g. to and from school / kindergarten)","button"],
+		[ "Have you ever used the services of a professional babysitter and in what cases??", "No, I have not", "Yes, while I am at work", "Yes, when I go out in the evening", "Yes, when I cannot take my child on a business trip", "Yes, as extra help at home", "button" ],
+		[ "For what kind of commitment do you need a sitter?"," Full-time or more than 10 hours a day","Part-time or less than 6 hours","Periodically, in particular case/days","I need her/him to live at home with us.","button"],
+		[ "What kind of responsibilities would you entrust to your sitter?","Food preparation, nutrition of my child", "Hygiene care", "Education/mentoring/preparation for school","Walks","Out-of-the town trips","Play dates","For escort / transport (e.g. to and from school / kindergarten)","button"],
 		[ "What are your concerns when you are about to entrust your child to a foreign care?","Not to be infected with a disease (influenza, measles, etc.).","Not to be harmed, even by accident","Not to be abused (physically or emotionally)", "My child’s needs - not to be ignored in any way","Not to affect badly on the discipline / daily schedule of my child","Another incidents, related to our home or our personal belongings", "button"],
 		[ "What is the amount of money you are willing to spend on a professional babysitter regarding the type of engagement and activities that you are interested in?", "Less than 5 leva/hour", "5-10 leva/hour", "10-15 leva/hour", "15-20 leva/hour"," Up to 20-25 leva/hour", "button" ],
 		[ "Please, share with us any further comments or concerns that interest you", "text" ]
@@ -65,7 +65,7 @@
 			var legalNotice = $("<div></div>").text("Your personal information will only be used for the purposes of our service and will not be provided to third parties! ")
 								.addClass("row legal-notice");
 			var submit = $("<button></button>").attr({"onclick":"submit()"}).text("Submit")
-							.addClass("btn btn-4 btn-4a btn-quiz btn-next");
+							.addClass("btn btn-4 btn-4b btn-back");
 			test.append(legalNotice).append(submit);
 
 			pos = 0;

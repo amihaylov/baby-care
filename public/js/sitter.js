@@ -4,15 +4,26 @@ $( document ).ready(function(){
 
 	// bind add sitter to SzoneApp.addSitter
    $("button#submit-sitter").click(function(){
-   	var sitter = {name: $("input#sitter-name").val(),
-   				   email: $("input#sitter-email").val(),
-             phone: $("input#sitter-phone").val(),
-   				   experience: $("#sitter-exp").val(),};
+      if($("#sitter-name").val() ==="" || $("#sitter-email").val() ==="" || $("#sitter-phone").val() ===""){
+         $("#sitter-warning").removeClass("invisible");
+         return true;
+      }
+      else{
+      	var sitter = {name: $("input#sitter-name").val(),
+      				   email: $("input#sitter-email").val(),
+                phone: $("input#sitter-phone").val(),
+      				   experience: $("#sitter-exp").val(),};
 
-   	SzoneApp.addSitter(sitter);
+      	SzoneApp.addSitter(sitter);
+      }
 
    });
 
+   //When closing Join us, hide warning
+   $("button#close-sitter").click(function(){
+      if(! $("#sitter-warning").hasClass("invisible"))
+         $("#sitter-warning").addClass("invisible");
+   });
    // Show quiz area
    $("#quiz-anchor").click(function(){
    		$("#req-sitter").css("display","");

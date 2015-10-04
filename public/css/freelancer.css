@@ -581,7 +581,7 @@ footer .footer-below {
     border-radius: 25px;
     background-color: #ee4f6b;
     font-family: 'lato-semibold';
-    font-size: 1em;
+    
 }
 
 .btn-6c:hover {
@@ -671,6 +671,7 @@ textarea input{
 
 .quiz-question{
     font-size: 1.7em;
+    color: #4d4d4d;
 }
 
 .modal-header .modal-footer {
@@ -682,7 +683,7 @@ textarea input{
     border-radius: 25px;
     background: transparent;
     font-family: 'lato-semibold';
-    font-size: 1.2.8em;
+    font-size: 1.4em;
     color: #21bdd6;
     min-width: 200px;
     text-align: center;
@@ -768,6 +769,7 @@ textarea input{
     color: #fff;
 }
 .btn-req-sitter {
+    font-size: 25px;
     border: none;
     font-family: 'Lato', sans-serif;
     -webkit-border-radius: 15px;
@@ -958,6 +960,9 @@ textarea {
     }
     .central-message{
         font-size: 1.4em;
+    }
+    .btn-req-sitter {
+        font-size: 0.5em;
     }
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.2em;

@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'sansation-italic',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -535,6 +535,13 @@ footer .footer-below {
     text-align: center;
     padding:  1px;
 }
+.fb-btn{
+    margin-top: 50px;
+}
+.empty-holder{
+    padding-top: 200px;
+}
+
 .modal-dialog p {
     font-size: 25px;
     text-align: center;
@@ -617,12 +624,11 @@ footer .footer-below {
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
 }
- */
+
 .bar-container{
     height: 25%;
-
 }
-
+*/
 #bar > svg {
     height: 100%;
     max-height: 200px;
@@ -662,6 +668,10 @@ textarea input{
     color: #fff;
 }
 
+.quiz-question{
+    font-size: 2em;
+}
+
 .modal-header .modal-footer {
   border-style: none;
 }
@@ -671,9 +681,10 @@ textarea input{
     border-radius: 25px;
     background: transparent;
     font-family: 'lato-semibold';
-    font-size: 2em;
+    font-size: 1.3em;
     color: #21bdd6;
     min-width: 200px;
+    text-align: center;
 }
 
 .btn-quiz:hover{
@@ -692,39 +703,19 @@ textarea input{
     color: #fff;
 }
 
-.btn-next{
-    font-size: 1em;
-}
-/* If you wish to play with tooltips for cities other than Sofia
-.no-sofia{
-    display: inline;
-    position: relative;
+.btn-back{
+    border-color: #21bdd6;
+    border-radius: 25px;
+    background-color: #fff;
+    font-family: 'lato-semibold';
+    font-size: 0.8em;
+    color: #21bdd6;
 }
 
-.no-sofia:hover:after{
-    background: #333;
-    background: rgba(0,0,0,.8);
-    border-radius: 5px;
-    bottom: 26px;
+.btn-back:hover {
     color: #fff;
-    content: attr(title);
-    left: 20%;
-    padding: 5px 15px;
-    position: absolute;
-    z-index: 98;
-    width: 220px;
+    background-color: #21bdd6;
 }
-
-.no-sofia:hover:before{
-    border: solid;
-    border-color: #333 transparent;
-    border-width: 6px 6px 0 6px;
-    bottom: 20px;
-    content: "";
-    left: 50%;
-    position: absolute;
-    z-index: 99;
-}*/
 
 /* valkov css 01/10/15 */
 .navbar-brand img {
@@ -819,7 +810,7 @@ textarea input{
     max-height: auto;
     height: 100%;
     white-space: inherit;
-    text-align: left;
+
     -webkit-border-radius: 15px;
        -moz-border-radius: 15px;
             border-radius: 15px;
@@ -852,7 +843,7 @@ textarea input{
     margin-top: 200px;
 }
 .bar-container .col-lg-12.text-center{
-    height: 400px;
+    height: 397px;
     background: url("../img/quiz-bg-400px.png") no-repeat center top;
  /*    -webkit-background-size: cover;
  -moz-background-size: cover;
@@ -862,6 +853,8 @@ textarea input{
 .test-container {
     background: #fff;
     padding-bottom: 70px;
+    position: relative;
+    z-index: 999;
 }
 .test-container #test {
     padding: 90px 0;
@@ -877,9 +870,41 @@ textarea {
 }
 
 /* responsive */
+@media (max-width: 1600px) {
+    .empty-holder{
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 1280px){
+    .empty-holder{
+        padding-top: 50px;
+    }
+    .central-message{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1200px){
+    .bar-container {
+        height: 390px;
+    }
+    #bar > svg {
+        margin-top: 0;
+    }
+    .bar-container .col-lg-12.text-center {
+        padding-top: 170px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-fixed-top {
         position: relative;
+    }
+    .quiz-containter {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .central-message {
         font-size: 26px;
@@ -892,6 +917,20 @@ textarea {
     .header-text p {
         top: 50px;
     }
+    .empty-holder{
+        padding-top: 0px;
+    }
+    .fb-btn{
+        margin-top: 5px;
+    }
+    .btn-quiz{
+        font-size: 1.2em;
+    }
+
+    .bar-container .col-lg-12.text-center {
+        padding-top: 210px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -905,6 +944,18 @@ textarea {
     }
     #quiz-anchor {
         width: 100%;
+    }
+    .empty-holder {
+        padding-top: 0px;
+    }
+    .fb-btn {
+        margin-top: 5px;
+    }
+    .btn-quiz {
+        font-size: 1.2em;
+    }
+    .bar-container .col-lg-12.text-center {
+        padding-top: 230px;
     }
 }
 

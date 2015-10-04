@@ -38,21 +38,33 @@
 </head>
 
 <body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-center">
-                    <ul class="nav navbar-nav navbar-left">
+                    <div class="header-text">
                         <p><a href="index.html"><span class="flag-icon flag-icon-bg" style="margin-right: 10px;"></span></a><a href="index-en.html"><span class="flag-icon flag-icon-gb"></span></a></p>
-                    </ul>
-                    
+                        <a href="#" class="navbar-brand"><img src="img/logo.png" class="img-responsive"></a>
+                        Грижа<span class="gray">.</span>
+                        Опит<span class="gray">.</span>
+                        Доверие<span class="gray">.</span>
+                    </div>
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <!-- Reuse for the links
                         <li class="page-scroll">
-                            <button class="btn btn-6 btn-6c btn-blue" data-toggle="modal" data-target="#myModal">СТАНИ ЕДИН ОТ НАС</button>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#about">About</a>
+                        </li>
+                         -->
+                        <li class="page-scroll">
+                            <button class="btn btn-6 btn-6c" data-toggle="modal" data-target="#myModal">ПРИСЪЕДИНИ СЕ</button>
                             <!-- Modal -->
                             <div id="myModal" class="modal fade" role="dialog">
                               <div class="modal-dialog">
@@ -61,37 +73,31 @@
                                 <div class="modal-content">
                                   <div class="modal-header" style="border-style: none;">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Стани част от екипа на Sitterzone</h4>
+                                    <h2 class="modal-title">Стани част от екипа на Sitterzone</h2>
                                   </div>
                                   <div class="modal-body">
-                                    <h3>Име:</h3>
-                                    <input type="text" id="sitter-name">
-                                    <h3>Email:</h3>
-                                    <input type="email" id="sitter-email">
-                                    <h3>Телефон:</h3>
-                                    <input type="text" id="sitter-phone">
+                                    <div class="form-group">
+                                        <h3>Име:</h3>
+                                        <input type="text" id="sitter-name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Email:</h3>
+                                        <input type="email" id="sitter-email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Телефон:</h3>
+                                        <input type="text" id="sitter-phone" class="form-control">
+                                    </div>
                                     <h3>Разкажи ни за своя опит:</h3>
-                                    <textarea class="quiz-textarea" rows="5" maxlength="500" id="sitter-exp"></textarea>
+                                    <textarea class="quiz-textarea form-control" rows="7" cols="50" maxlength="500" id="sitter-exp"></textarea>
                                   </div>
                                   <div class="modal-footer" style="border-style: none;">
-                                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal" id="submit-sitter">Submit</button>
+                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal" id="submit-sitter">Потвърди</button>
                                   </div>
                                 </div>
                               </div>
                             </div>
                         </li>
-                    </ul>
-                    <ul class="nav">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-3">
-                            <div class="row">
-                                <img src="img/logo.png" alt="">  
-                            </div>
-                            <div class="row">
-                                <div class="header-text">Грижа<span class="gray">.</span> Опит<span class="gray">.</span> Доверие<span class="gray">.</span></div>
-                            </div>       
-                        </div>
-                        <div class="col-sm-3"></div>
                     </ul>
                 </ul>
 
@@ -100,28 +106,30 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <!-- Navigation -->
 
     <!-- Header -->
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="row empty-holder"></div>
                     <div class="central-message">Най-лесният и надежден начин <br />да намерите <span class="red">професионален детегледач</span> <br />за своето дете!
                     </div>
                 </div>
             </div>
             <div class="row req-sitter" style="margin-top: 100px;">
-                <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" data-toggle="modal" data-target="#quizModal">ЗАЯВИ ДЕТЕГЛЕДАЧ</button></a>
+                <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" data-toggle="modal" data-target="#quizModal" id="hide-header">ЗАЯВИ ДЕТЕГЛЕДАЧ</button></a>
             </div>
-            <div class="row" style="margin-top: 10px;">
-                <a href="https://www.facebook.com/SitterZone-427106204150029"><button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button></a>
+            <div class="row fb-btn">
+                <a href="https://www.facebook.com/SitterZone-427106204150029"<button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button></a>
             </div>
         </div>
     </header>
 
     <!-- Portfolio Grid Section -->
         <div class="container quiz-containter invisible" id="quiz">
-            
+
             <!-- Modal -->
             <div id="quizModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -135,7 +143,7 @@
                     <p>Отговорете на въпросите ни, за да предоставим най-подходящия детегледач за Вашето дете. </p>
                   </div>
                   <div class="modal-footer" style="border-style: none;">
-                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal" id="hide-header">OK</button>
+                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal">OK</button>
                   </div>
                 </div>
 
@@ -143,8 +151,6 @@
             </div>
             <!-- End Modal -->
 
-            <div class="row empty-container">
-            </div>
             <div class="row bar-container">
                 <div class="col-lg-12 text-center">
                     <div id="bar"></div>
@@ -154,7 +160,7 @@
                 <div class="col-lg-12 text-center">
                     <div id="test"></div>
                 </div>
-            </div>  
+            </div>
         </div>
 
 
@@ -202,7 +208,6 @@
     <script type="text/javascript">
         $('#hide-header').bind('click',function(){
             $('header').addClass('invisible');
-            $('header').hasClass('invisible');
         });
     </script>
 

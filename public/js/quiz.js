@@ -56,13 +56,15 @@
 			var inputEmail = $("<input>").attr({"type":"email","id":"email","value":""});
 			var phone = $("<h4></h4>").text("Телефон:");
 			var inputPhone = $("<input>").attr({"type":"text","id":"phone","value":""});
+			var ifEmptyFields = $("<h4></h4>").text("Моля попълнете всички полета.").addClass("invisible")
+								.attr({"style":"border-style: solid; border-width: 1px; border-color: #ee4f6b; border-radius: 20px;","id":"warning"});
 			test.append(h2).append(names).append(inputNames).append(pageBreak).append(email).append(inputEmail)
-				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(submit);
+				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(ifEmptyFields).append(submit);
 			
 			//Adding personal info at end of answers[]
 			var legalNotice = $("<div></div>").text("Личните Ви данни ще бъдат използвани само за целите на услугата ни и няма да бъдат предоставени на трети лица! ")
 								.addClass("row legal-notice");
-			var submit = $("<button></button>").attr({"onclick":"submit()"}).text("Submit")
+			var submit = $("<button></button>").attr({"onclick":"submit()"}).text("Потвърди")
 							.addClass("btn btn-4 btn-4a btn-quiz btn-next");
 			test.append(legalNotice).append(submit);
 			
@@ -107,12 +109,12 @@
 					test.append(buttonPrev).append($("<br>"));
 			break;
 			case("text"):
-				var textArea = $("<textarea></textarea>").attr({"rows": 5, "maxlength": 500, "id": "quiz-text"})
+				var textArea = $("<textarea></textarea>").attr({"cols":50, "rows": 7, "maxlength": 500, "id": "quiz-text"})
 								.addClass("quiz-textarea");
 				test.append(textArea).append($("<br>"));
 				answers.push()
 				var strFunction = "checkAnswer(\"text\")";
-				var button = $("<button></button>").addClass("btn btn-4 btn-4a btn-quiz btn-next")
+				var button = $("<button></button>").addClass("btn btn-4 btn-4a btn-back")
 							.attr({"name":"choices","onclick":strFunction}).text("НАПРЕД");
 				test.append(button).append($("<br>"));
 
@@ -139,6 +141,14 @@
 		renderQuestion();
 	}
 
+	function isEmpty () {
+		if($("#names").val() ==="" || $("#email").val() ==="" || $("#phone").val() ===""){
+			$("#warning").removeClass("invisible");
+			return true;
+		}
+		return false;
+	}
+
 	function goBack () {
 		answers.splice(answers.length-1,1);
 		pos--;
@@ -147,18 +157,20 @@
 	}
 
 	function submit(){
-		answers.push($("#names").val(),$("#email").val(),$("#phone").val());
-		SzoneApp.addClient(answers);
+		if(!isEmpty()){
+			answers.push($("#names").val(),$("#email").val(),$("#phone").val());
+			SzoneApp.addClient(answers);
 
-		test = $("#test");
-		test.empty();
-		var h3 = $("<h3></h3>");
+			test = $("#test");
+			test.empty();
+			var h3 = $("<h3></h3>");
 
-		if(answers[0]==="София")
-			h3.text("Екипът на SitterZone Ви благодари! Скоро ще се свържем с Вас!");
-		else
-			h3.text("Екипът на SitterZone Ви благодари! За момента услугата на SitterZone се предлага само в София-град. Скоро ще предоставам нашата грижа и във Вашето населено място! ");
-		test.append(h3);
+			if(answers[0]==="София")
+				h3.text("Екипът на SitterZone Ви благодари! Скоро ще се свържем с Вас!");
+			else
+				h3.text("Екипът на SitterZone Ви благодари! За момента услугата на SitterZone се предлага само в София-град. Скоро ще предоставам нашата грижа и във Вашето населено място! ");
+			test.append(h3);
+		}
 	}
 
 	window.addEventListener("load", renderQuestion, false);

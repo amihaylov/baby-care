@@ -56,8 +56,10 @@
 			var inputEmail = $("<input>").attr({"type":"email","id":"email","value":""});
 			var phone = $("<h4></h4>").text("Phone:");
 			var inputPhone = $("<input>").attr({"type":"text","id":"phone","value":""});
+			var ifEmptyFields = $("<h4></h4>").text("Please fill out all the fields.").addClass("invisible")
+								.attr({"style":"border-style: solid; border-width: 1px; border-color: #ee4f6b; border-radius: 20px;","id":"warning"});
 			test.append(h2).append(names).append(inputNames).append(pageBreak).append(email).append(inputEmail)
-				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(submit);
+				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(ifEmptyFields).append(submit);
 
 			//Adding personal info at end of answers[]
 			var legalNotice = $("<div></div>").text("Your personal information will only be used for the purposes of our service and will not be provided to third parties! ")
@@ -101,12 +103,12 @@
 						test.append(buttonPrev).append($("<br>"));
 			break;
 			case("text"):
-				var textArea = $("<textarea></textarea>").attr({"rows": 5, "maxlength": 500, "id": "quiz-text"})
+				var textArea = $("<textarea></textarea>").attr({"cols":50, "rows": 7, "maxlength": 500, "id": "quiz-text"})
 								.addClass("quiz-textarea");
 				test.append(textArea).append($("<br>"));
 				answers.push()
 				var strFunction = "checkAnswer(\"text\")";
-				var button = $("<button></button>").addClass("btn btn-4 btn-4a btn-quiz btn-next")
+				var button = $("<button></button>").addClass("btn btn-4 btn-4a btn-back")
 							.attr({"name":"choices","onclick":strFunction}).text("NEXT");
 				test.append(button).append($("<br>"));
 
@@ -134,6 +136,14 @@
 		renderQuestion();
 	}
 
+	function isEmpty () {
+		if($("#names").val() ==="" || $("#email").val() ==="" || $("#phone").val() ===""){
+			$("#warning").removeClass("invisible");
+			return true;
+		}
+		return false;
+	}
+
 	function goBack () {
 		answers.splice(answers.length-1,1);
 		pos--;
@@ -142,18 +152,20 @@
 	}
 
 	function submit(){
-		answers.push($("#names").val(),$("#email").val(),$("#phone").val());
-		SzoneApp.addClient(answers);
+		if(!isEmpty()){
+			answers.push($("#names").val(),$("#email").val(),$("#phone").val());
+			SzoneApp.addClient(answers);
 
-		test = $("#test");
-		test.empty();
-		var h3 = $("<h3></h3>");
+			test = $("#test");
+			test.empty();
+			var h3 = $("<h3></h3>");
 
-		if(answers[0]==="Sofia")
-			h3.text("Thank you! We will contact you soon!");
-		else
-			h3.text("Thank you! At this moment, the service of SitterZone is only provided in Sofia City. We will offer our care also in your town very soon!");
-		test.append(h3);
+			if(answers[0]==="Sofia")
+				h3.text("Thank you! We will contact you soon!");
+			else
+				h3.text("Thank you! At this moment, the service of SitterZone is only provided in Sofia City. We will offer our care also in your town very soon!");
+			test.append(h3);
+		}
 	}
 
 	window.addEventListener("load", renderQuestion, false);

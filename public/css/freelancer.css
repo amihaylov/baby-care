@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'sansation-light',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -78,18 +78,25 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
-header {
+/* header {
     text-align: center;
     color: #fff;
-    background-image: url("../img/bg-babysitter.png");
+    background: url("../img/bg-babysitter.png") no-repeat;
     background-size: 100% auto;
-    /* TODO Later to put height according to screen resolution */
-    height: 100%;
+    TODO Later to put height according to screen resolution
+} */
+html {
+  background: url("../img/bg-babysitter.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+    background: transparent;
 }
 
 header .container {
-    padding-top: 100px;
-    padding-bottom: 50px;
 }
 
 header img {
@@ -111,10 +118,6 @@ header .intro-text .skills {
 }
 
 @media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
 
     header .intro-text .name {
         font-size: 4.75em;
@@ -141,10 +144,7 @@ header .intro-text .skills {
     }
 
     .navbar-fixed-top.navbar-shrink {
-        /* Disappear
-        display: none;*/
-        /* Shrink */
-        padding: 10px 0; 
+        padding: 10px 0;
     }
 
     .navbar-fixed-top.navbar-
@@ -495,8 +495,8 @@ footer .footer-below {
 }
 
 @font-face{
-    font-family: 'sansation-light';
-    src: url("../fonts/Sansation-Light-webfont.woff") format('woff');
+    font-family: 'lato-bold';
+    src: url("../fonts/Lato-Bold.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0-E007F;
@@ -518,7 +518,7 @@ footer .footer-below {
 
 .central-message{
     background-color: rgba(255,255,255,0.5);
-    margin-top: 200px;
+    margin-top: 16%;
     color: #787878;
     font-family: 'sansation-italic';
     font-size: 3em;
@@ -527,10 +527,48 @@ footer .footer-below {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     border-style: solid;
     border-width: 1px;
     border-color: #FFF;
     border-radius: 20px;
+    text-align: center;
+    padding:  1px;
+}
+.fb-btn{
+    margin-top: 50px;
+}
+.empty-holder{
+    padding-top: 200px;
+}
+
+.modal-dialog p {
+    font-size: 25px;
+    text-align: center;
+    line-height: 45px;
+}
+.modal-footer .btn-quiz-inverted {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+.modal-dialog {
+    margin-top: 10%;
+}
+.modal-content {
+    background: none !important;
+    border: none;
+    box-shadow: none;
+}
+.modal .close {
+    color: #fff;
+    opacity: 1;
+}
+.modal-backdrop.in {
+    opacity: 1;
+}
+.modal-backdrop {
+    background: rgba(33, 189, 214, .87);
 }
 
 .modal-body{
@@ -547,20 +585,6 @@ footer .footer-below {
 
 .btn-6c:hover {
     color: #ee4f6b;
-}
-
-.btn-back{
-    border-color: #21bdd6;
-    border-radius: 25px;
-    background-color: #fff;
-    font-family: 'lato-semibold';
-    font-size: 0.8em;
-    color: #21bdd6;
-}
-
-.btn-back:hover {
-    color: #fff;
-    background-color: #21bdd6;
 }
 
 .btn-blue{
@@ -596,17 +620,13 @@ footer .footer-below {
     display: none;
 }
 
-#quiz{
+/* #quiz{
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
 }
-
-.empty-container{
-    height: 20%;
-}
-
+ */
 .bar-container{
-    height: 25%; 
+    height: 25%;
 }
 
 #bar > svg {
@@ -615,14 +635,15 @@ footer .footer-below {
     display: block;
 }
 
+/*
 #test{
     background-color: rgba(255,255,255,1);
 }
 
-.test-container{
+ .test-container{
     background-color: rgba(255,255,255,1);
-    height: 55%;
-}
+    height: 75%;
+} */
 
 textarea input{
     color: #000;
@@ -635,10 +656,6 @@ textarea input{
 /* TODO Check with other resolutions */
 .quiz-containter{
     width: 100%;
-}
-
-.quiz-question{
-    font-family: 'sansation-italic';
 }
 
 .quiz-span{
@@ -663,6 +680,7 @@ textarea input{
     font-size: 2em;
     color: #21bdd6;
     min-width: 200px;
+    text-align: center;
 }
 
 .btn-quiz:hover{
@@ -684,33 +702,232 @@ textarea input{
 .btn-next{
     font-size: 1em;
 }
-/* If you wish to play with tooltips for cities other than Sofia
-.no-sofia{
-    display: inline;
-    position: relative;
+
+.btn-back{
+    border-color: #21bdd6;
+    border-radius: 25px;
+    background-color: #fff;
+    font-family: 'lato-semibold';
+    font-size: 0.8em;
+    color: #21bdd6;
 }
 
-.no-sofia:hover:after{
-    background: #333;
-    background: rgba(0,0,0,.8);
-    border-radius: 5px;
-    bottom: 26px;
+.btn-back:hover {
     color: #fff;
-    content: attr(title);
-    left: 20%;
-    padding: 5px 15px;
-    position: absolute;
-    z-index: 98;
-    width: 220px;
+    background-color: #21bdd6;
 }
 
-.no-sofia:hover:before{
-    border: solid;
-    border-color: #333 transparent;
-    border-width: 6px 6px 0 6px;
-    bottom: 20px;
-    content: "";
-    left: 50%;
+/* valkov css 01/10/15 */
+.navbar-brand img {
+    margin: 0 auto;
+}
+.navbar-brand {
+    display: inline-block;
+    float: none;
+    margin: 0 auto !important;
+    padding: 0;
+    height: auto;
+    min-width: 100%;
+}
+.collapse .navbar-right {
+    margin-top: -74px;
+}
+.navbar-nav {
+    margin-left: 0;
+    margin-right: 0;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-header {
+    width: 100%;
+}
+.collapse {
+    display: block;
+    visibility: visible;
+    margin: 0 !important;
+}
+.page-scroll .btn-6:hover {
+    background: #1f9cb0;
+}
+.page-scroll .btn-6 {
+    background: #21bdd6;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.btn-req-sitter:hover {
+    background: #CA2C48;
+    color: #fff;
+}
+.btn-req-sitter {
+    border: none;
+    font-family: 'Lato', sans-serif;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.test-container h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    color: #5e5e5e;
+    font-weight: 600;
+    text-transform: inherit;
+}
+.test-container .btn-quiz:hover .quiz-span {
+    color: #fff;
+}
+.header-text p {
     position: absolute;
-    z-index: 99;
-}*/
+    left: 15px;
+    top: -5px;
+}
+.page-scroll .modal-dialog {
+    margin-top: 0;
+}
+/* .test-container .quiz-span {
+    font-size: 22px;
+    font-family: 'Lobster', cursive;
+    font-style: italic;
+    font-weight: 500;
+    display: none;
+    color: #1dbbd4;
+    text-transform: none;
+    font-size: 27px;
+} */
+.test-container .btn-quiz {
+    text-transform: none;
+    width: 100%;
+    margin-left: 0;
+    max-height: auto;
+    height: 100%;
+    white-space: inherit;
+
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.btn-2i {
+    margin: 0 auto;
+    width: 90px;
+    display: block;
+}
+#quiz-anchor {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 350px;
+}
+.req-sitter {
+    margin-top: 0 !important;
+}
+.parent{
+    display:table;
+}
+.child{
+    display:table-cell;
+    vertical-align:middle;
+}
+#bar > svg {
+    height: 140px;
+    margin-top: 200px;
+}
+.bar-container .col-lg-12.text-center{
+    height: 400px;
+    background: url("../img/quiz-bg-400px.png") no-repeat center top;
+ /*    -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover; */
+}
+.test-container {
+    background: #fff;
+    padding-bottom: 70px;
+}
+.test-container #test {
+    padding: 90px 0;
+}
+textarea {
+    resize: none;
+}
+#submit-sitter {
+    background: #fff;
+    color: #21bdd6;
+    margin: 0 auto;
+    display: block;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .navbar-fixed-top {
+        position: relative;
+    }
+    .central-message {
+        font-size: 26px;
+        padding: 30px;
+        width: 100%;
+    }
+    .collapse .navbar-right {
+        margin-top: 0px;
+    }
+    .header-text p {
+        top: 50px;
+    }
+    .empty-holder{
+        padding-top: 0px;
+    }
+    .fb-btn{
+        margin-top: 5px;
+    }
+    .bar-container{
+        height: 40%;
+    }
+    .bar-container .col-lg-12.text-center{
+        background: none;
+    }
+    .btn-quiz{
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text p {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    #quiz-anchor .btn {
+        white-space: inherit;
+    }
+    #quiz-anchor {
+        width: 100%;
+    }
+    .empty-holder{
+        padding-top: 0px;
+    }
+    .fb-btn{
+        margin-top: 5px;
+    }
+    .bar-container{
+        height: 40%;
+    }
+    .bar-container .col-lg-12.text-center{
+        background: none;
+    }
+    .btn-quiz{
+        font-size: 1.2em;
+    }
+}
+}
+
+/* end valkov css 01/10/15 */

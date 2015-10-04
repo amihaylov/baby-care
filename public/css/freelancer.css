@@ -33,6 +33,7 @@ h5,
 h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    font-size: 1.7em;
 }
 
 hr.star-light,
@@ -182,7 +183,7 @@ section {
 
 section h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 section.success {
@@ -406,7 +407,7 @@ footer .footer-below {
 
 .portfolio-modal .modal-content h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 .portfolio-modal .modal-content img {
@@ -580,7 +581,7 @@ footer .footer-below {
     border-radius: 25px;
     background-color: #ee4f6b;
     font-family: 'lato-semibold';
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .btn-6c:hover {
@@ -650,7 +651,7 @@ textarea input{
 }
 
 .progressbar-text{
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 /* TODO Check with other resolutions */
@@ -669,7 +670,7 @@ textarea input{
 }
 
 .quiz-question{
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .modal-header .modal-footer {
@@ -681,7 +682,7 @@ textarea input{
     border-radius: 25px;
     background: transparent;
     font-family: 'lato-semibold';
-    font-size: 1.3em;
+    font-size: 1.2.8em;
     color: #21bdd6;
     min-width: 200px;
     text-align: center;
@@ -708,7 +709,7 @@ textarea input{
     border-radius: 25px;
     background-color: #fff;
     font-family: 'lato-semibold';
-    font-size: 0.8em;
+    font-size: 1em;
     color: #21bdd6;
 }
 
@@ -883,9 +884,26 @@ textarea {
     }
 }
 
+@media (max-width: 1200px){
+    .bar-container {
+        height: 390px;
+    }
+    #bar > svg {
+        margin-top: 0;
+    }
+    .bar-container .col-lg-12.text-center {
+        padding-top: 170px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-fixed-top {
         position: relative;
+    }
+    .quiz-containter {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .central-message {
         font-size: 26px;
@@ -904,15 +922,14 @@ textarea {
     .fb-btn{
         margin-top: 5px;
     }
-    .bar-container{
-        height: 40%;
-    }
-    .bar-container .col-lg-12.text-center{
-        background: none;
-    }
     .btn-quiz{
         font-size: 1.2em;
     }
+
+    .bar-container .col-lg-12.text-center {
+        padding-top: 210px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -927,22 +944,24 @@ textarea {
     #quiz-anchor {
         width: 100%;
     }
-    .empty-holder{
+    .empty-holder {
         padding-top: 0px;
     }
-    .fb-btn{
+    .fb-btn {
         margin-top: 5px;
     }
-    .bar-container{
-        height: 40%;
-    }
-    .bar-container .col-lg-12.text-center{
-        background: none;
-    }
-    .btn-quiz{
+    .btn-quiz {
         font-size: 1.2em;
     }
-}
+    .bar-container .col-lg-12.text-center {
+        padding-top: 230px;
+    }
+    .central-message{
+        font-size: 1.4em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2em;
+    }
 }
 
 /* end valkov css 01/10/15 */

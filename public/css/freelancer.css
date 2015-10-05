@@ -887,6 +887,8 @@ textarea {
     color: #fff;
 }
 
+
+
 /* responsive */
 @media (max-width: 1600px) {
     .empty-holder{
@@ -983,6 +985,12 @@ textarea {
     }
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.2em;
+    }
+}
+
+@media (max-width: 360px) {
+    .lines{
+        display: none;
     }
 }
 

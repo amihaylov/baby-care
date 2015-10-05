@@ -33,3 +33,5 @@ simple_blog
 #Rails shit
 *.cache
 tmp
+#backend!!!
+app.js

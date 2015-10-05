@@ -870,6 +870,23 @@ textarea {
     display: block;
 }
 
+/* Fix no visible text on focused button*/
+.btn-quiz:focus{
+    color: #21bdd6;
+}
+
+.btn-quiz:focus:hover{
+    color: #fff;
+}
+
+.btn-back:focus{
+    color: #21bdd6;
+}
+
+.btn-back:focus:hover{
+    color: #fff;
+}
+
 /* responsive */
 @media (max-width: 1600px) {
     .empty-holder{

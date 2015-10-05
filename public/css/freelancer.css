@@ -33,6 +33,7 @@ h5,
 h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    font-size: 1.7em;
 }
 
 hr.star-light,
@@ -182,7 +183,7 @@ section {
 
 section h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 section.success {
@@ -406,7 +407,7 @@ footer .footer-below {
 
 .portfolio-modal .modal-content h2 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 .portfolio-modal .modal-content img {
@@ -521,7 +522,7 @@ footer .footer-below {
     margin-top: 16%;
     color: #787878;
     font-family: 'sansation-italic';
-    font-size: 3em;
+    font-size: 2.8em;
     color: #787878;
     width: 80%;
     display: block;
@@ -580,7 +581,7 @@ footer .footer-below {
     border-radius: 25px;
     background-color: #ee4f6b;
     font-family: 'lato-semibold';
-    font-size: 0.8em;
+
 }
 
 .btn-6c:hover {
@@ -624,11 +625,11 @@ footer .footer-below {
     background-image: url("../img/quiz-bg.jpg");
     background-size: 100% auto;
 }
-
+ */
 .bar-container{
     height: 25%;
 }
-*/
+
 #bar > svg {
     height: 100%;
     max-height: 200px;
@@ -650,7 +651,7 @@ textarea input{
 }
 
 .progressbar-text{
-    font-size: 3em;
+    font-size: 2.8em;
 }
 
 /* TODO Check with other resolutions */
@@ -669,7 +670,8 @@ textarea input{
 }
 
 .quiz-question{
-    font-size: 2em;
+    font-size: 1.7em;
+    color: #4d4d4d;
 }
 
 .modal-header .modal-footer {
@@ -681,7 +683,7 @@ textarea input{
     border-radius: 25px;
     background: transparent;
     font-family: 'lato-semibold';
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: #21bdd6;
     min-width: 200px;
     text-align: center;
@@ -708,7 +710,7 @@ textarea input{
     border-radius: 25px;
     background-color: #fff;
     font-family: 'lato-semibold';
-    font-size: 0.8em;
+    font-size: 1em;
     color: #21bdd6;
 }
 
@@ -767,6 +769,7 @@ textarea input{
     color: #fff;
 }
 .btn-req-sitter {
+    font-size: 25px;
     border: none;
     font-family: 'Lato', sans-serif;
     -webkit-border-radius: 15px;
@@ -843,7 +846,7 @@ textarea input{
     margin-top: 200px;
 }
 .bar-container .col-lg-12.text-center{
-    height: 397px;
+    height: 400px;
     background: url("../img/quiz-bg-400px.png") no-repeat center top;
  /*    -webkit-background-size: cover;
  -moz-background-size: cover;
@@ -853,8 +856,6 @@ textarea input{
 .test-container {
     background: #fff;
     padding-bottom: 70px;
-    position: relative;
-    z-index: 999;
 }
 .test-container #test {
     padding: 90px 0;
@@ -862,11 +863,12 @@ textarea input{
 textarea {
     resize: none;
 }
-#submit-sitter {
+.btn-sitter {
     background: #fff;
     color: #21bdd6;
     margin: 0 auto;
     display: block;
+    margin-bottom: 20px;
 }
 
 /* responsive */
@@ -956,6 +958,15 @@ textarea {
     }
     .bar-container .col-lg-12.text-center {
         padding-top: 230px;
+    }
+    .central-message{
+        font-size: 1.4em;
+    }
+    .btn-req-sitter {
+        font-size: 0.5em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 1.2em;
     }
 }
 

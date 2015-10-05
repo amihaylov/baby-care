@@ -11,6 +11,7 @@
 
     <title>Sitterzone</title>
 
+    <link rel="shortcut icon" href="img/sitterzone-flaticon.png">
     <!-- Custom buttons and transform buttons -->
     <link rel="stylesheet" type="text/css" href="css/default.css" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -52,17 +53,6 @@
                         Trust<span class="gray">.</span>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <!-- Reuse for the links
-                        <li class="page-scroll">
-                            <a href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="page-scroll">
-                            <a href="#about">About</a>
-                        </li>
-                         -->
                         <li class="page-scroll">
                             <button class="btn btn-6 btn-6c" data-toggle="modal" data-target="#myModal">JOIN US</button>
                             <!-- Modal -->
@@ -90,9 +80,18 @@
                                     </div>
                                     <h3>Tell us about your experience:</h3>
                                     <textarea class="quiz-textarea form-control" rows="7" cols="50" maxlength="500" id="sitter-exp"></textarea>
+                                    <br />
+                                    <h4 class="invisible" style="color: #ee4f6b;" id="sitter-warning">Please fill out all the fields.</h4>
                                   </div>
                                   <div class="modal-footer" style="border-style: none;">
-                                    <button type="button" class="btn btn-4 btn-4a btn-quiz" data-dismiss="modal" id="submit-sitter">Submit</button>
+                                   <div class="row">
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-4 btn-4a btn-quiz btn-sitter" id="submit-sitter">Submit</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-4 btn-4a btn-quiz btn-sitter" data-dismiss="modal" id="close-sitter">Close</button>
+                                        </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -122,7 +121,7 @@
                 <a href="#quiz" id="quiz-anchor"><button class="btn btn-6 btn-6c btn-req-sitter" data-toggle="modal" data-target="#quizModal" id="hide-header">GET A SITTER</button></a>
             </div>
             <div class="row fb-btn">
-                <a href="https://www.facebook.com/SitterZone-427106204150029"><button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button></a>
+                <a href="https://www.facebook.com/SitterZone-427106204150029" target="_blank"><button class="btn btn-2 btn-2i"><i class="fa fa-fw fa-facebook"></i></button></a>
             </div>
         </div>
     </header>
@@ -143,7 +142,7 @@
                     <p>Please answer a few questions and we will provide your child with the most suitable sitter! </p>
                   </div>
                   <div class="modal-footer" style="border-style: none;">
-                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz-inverted" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-4 btn-4a btn-quiz btn-quiz btn-quiz-inverted" data-dismiss="modal" id="close-sitter">OK</button>
                   </div>
                 </div>
 

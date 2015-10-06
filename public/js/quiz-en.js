@@ -15,7 +15,6 @@
 	var circle = new ProgressBar.Circle('#bar', {
 		color: '#21bdd6',
 		strokeWidth: 3,
-		//trailWidth: 1,
 		trailColor: '#ee4f6b',
 		trailWidth: 2,
 		duration: 1500,

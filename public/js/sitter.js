@@ -4,7 +4,8 @@ $( document ).ready(function(){
 
 	// bind add sitter to SzoneApp.addSitter
    $("button#submit-sitter").click(function(){
-      if($("#sitter-name").val() ==="" || $("#sitter-email").val() ==="" || $("#sitter-phone").val() ===""){
+      if($("#sitter-name").val() ==="" || $("#sitter-email").val() ==="" || $("#sitter-phone").val() ==="" 
+         || $("#sitter-exp").val() ===""){
          $("#sitter-warning").removeClass("invisible");
          return true;
       }
@@ -15,6 +16,7 @@ $( document ).ready(function(){
       				   experience: $("#sitter-exp").val(),};
 
       	SzoneApp.addSitter(sitter);
+         $("#sitter-warning").addClass("invisible");
       }
 
    });

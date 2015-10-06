@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-size: 1.7em;
 }
@@ -108,7 +108,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 2em;
     font-weight: 700;
 }
@@ -155,7 +155,7 @@ header .intro-text .skills {
 }
 
 .navbar {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     background-color: rgba(255,255,255,0.85);
 }
@@ -418,6 +418,10 @@ footer .footer-below {
     margin: 30px 0;
 }
 
+.lines {
+    padding: 0px !important;
+}
+
 .portfolio-modal .close-modal {
     position: absolute;
     top: 25px;
@@ -511,9 +515,11 @@ footer .footer-below {
     unicode-range: U+0-E007F;
 }
 
-.header-text{
+.header-text {
     color: #21bdd6;
-    font-family: 'sansation-italic';
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 400;
     font-size: 1.2em;
 }
 
@@ -521,8 +527,10 @@ footer .footer-below {
     background-color: rgba(255,255,255,0.5);
     margin-top: 16%;
     color: #787878;
-    font-family: 'sansation-italic';
-    font-size: 2.8em;
+    font-family:"Ubuntu Pro Bold", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 50px;
     color: #787878;
     width: 80%;
     display: block;
@@ -547,11 +555,13 @@ footer .footer-below {
     font-size: 25px;
     text-align: center;
     line-height: 45px;
+    font-style: italic;
 }
 .modal-footer .btn-quiz-inverted {
-    width: 200px;
+    width: 100px;
     margin: 0 auto;
     display: block;
+    font-size: 14px;
 }
 .modal-dialog {
     margin-top: 10%;
@@ -562,8 +572,12 @@ footer .footer-below {
     box-shadow: none;
 }
 .modal .close {
+    position: absolute;
+    top: 0;
+    right: 0;
     color: #fff;
     opacity: 1;
+    font-size: 32px;
 }
 .modal-backdrop.in {
     opacity: 1;
@@ -572,16 +586,16 @@ footer .footer-below {
     background: rgba(33, 189, 214, .87);
 }
 
-.modal-body{
+/* .modal-body{
     font-family: 'sansation-italic';
-}
+} */
 
 .btn-6c{
     border-color: #ee4f6b;
     border-radius: 25px;
     background-color: #ee4f6b;
     font-family: 'lato-semibold';
-    
+
 }
 
 .btn-6c:hover {
@@ -621,11 +635,10 @@ footer .footer-below {
     display: none;
 }
 
-/* #quiz{
-    background-image: url("../img/quiz-bg.jpg");
-    background-size: 100% auto;
+#quiz{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
- */
 .bar-container{
     height: 25%;
 }
@@ -646,8 +659,31 @@ footer .footer-below {
     height: 75%;
 } */
 
+#test h2 {
+    font-size: 21px;
+    color: #636060;
+}
+#test h4 {
+    font-size: 14px;
+    color: #636060;
+}
+#test input {
+    border: 1px solid #21bdd6 !important;
+    height: 35px;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+    padding-left: 10px;
+}
+.legal-notice {
+    font-size: 12px;
+    margin-top: 20px;
+}
 textarea input{
     color: #000;
+}
+button {
+    outline: none;
 }
 
 .progressbar-text{
@@ -670,7 +706,7 @@ textarea input{
 }
 
 .quiz-question{
-    font-size: 1.7em;
+    font-size: 21px;
     color: #4d4d4d;
 }
 
@@ -685,7 +721,6 @@ textarea input{
     font-family: 'lato-semibold';
     font-size: 1.4em;
     color: #21bdd6;
-    min-width: 200px;
     text-align: center;
 }
 
@@ -753,6 +788,7 @@ textarea input{
     background: #1f9cb0;
 }
 .page-scroll .btn-6 {
+    font-size: 12px;
     background: #21bdd6;
     border: none;
     outline: none;
@@ -769,7 +805,7 @@ textarea input{
     color: #fff;
 }
 .btn-req-sitter {
-    font-size: 25px;
+    font-size: 14px;
     border: none;
     font-family: 'Lato', sans-serif;
     -webkit-border-radius: 15px;
@@ -796,6 +832,10 @@ textarea input{
 .page-scroll .modal-dialog {
     margin-top: 0;
 }
+.page-scroll .form-control {
+    border-color: #fff;
+    color: #4d4d4d;
+}
 /* .test-container .quiz-span {
     font-size: 22px;
     font-family: 'Lobster', cursive;
@@ -812,8 +852,9 @@ textarea input{
     margin-left: 0;
     max-height: auto;
     height: 100%;
+    font-size: 15px;
     white-space: inherit;
-
+    text-align: left;
     -webkit-border-radius: 15px;
        -moz-border-radius: 15px;
             border-radius: 15px;
@@ -824,6 +865,7 @@ textarea input{
     margin: 0 auto;
     width: 90px;
     display: block;
+    outline: none;
 }
 #quiz-anchor {
     margin: 0 auto;
@@ -868,6 +910,24 @@ textarea {
     color: #21bdd6;
     margin: 0 auto;
     display: block;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+.modal-dialog h2 {
+    font-size: 21px;
+}
+.modal-dialog h3 {
+    font-size: 15px;
+}
+.page-scroll .modal-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-control  {
+    height: 36px;
+}
+.modal-body {
+    padding: 0;
 }
 
 /* Fix no visible text on focused button*/
@@ -886,7 +946,12 @@ textarea {
 .btn-back:focus:hover{
     color: #fff;
 }
-
+.btn:focus,
+.btn {
+    outline: none;
+    box-shadow: none;
+    touch-action: inherit;
+}
 
 
 /* responsive */
@@ -986,6 +1051,15 @@ textarea {
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.2em;
     }
+    .bar-container .col-lg-12.text-center{
+        height: 400px;
+        background: url("../img/quiz-bg-400p480px.png") no-repeat center center;
+         /*    -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover; */
+    }
+
 }
 
 @media (max-width: 360px) {

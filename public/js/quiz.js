@@ -1,6 +1,6 @@
 "use strict"
 	var questions = [
-		[ "Градът, в който живеете:", "София", "Пловдив", "Бургас", "Варна", "Стара Загора", "Русе", "button" ],
+		[ "Градът, в който живеете:", "София", "Пловдив", "Варна", "Бургас", "Русе", "Стара Загора", "Плевен", "button" ],
 		[ "Колко деца има във Вашето семейство?", "1", "2", "3", "4", "Повече от 4", "button" ],
 		[ "На каква възраст е най-малкото сред тях?", "Под 1 год.", "1-2год", "2-3год.", "3-4год.", "4-5год.", "Над 5 год.", "button" ],
 		[ "Използвали ли сте досега услугите на професионален детегледач и по какъв повод?", "Не", "Да, защото имам нужда от грижа за детето си, докато съм на работа", "Да, когато вечер излизам", "Да, когато пътувам и нямам възможност да бъда с детето си", "Да, когато съм вкъщи с детето си, но имам нужда от допълнителна помощ", "button" ],
@@ -15,7 +15,7 @@
 	var circle = new ProgressBar.Circle('#bar', {
 		color: '#21bdd6',
 		strokeWidth: 3,
-		trailWidth: 1,
+		//trailWidth: 1,
 		trailColor: '#ee4f6b',
 		trailWidth: 2,
 		duration: 1500,
@@ -60,14 +60,14 @@
 								.attr({"style":"border-style: solid; border-width: 1px; border-color: #ee4f6b; border-radius: 20px;","id":"warning"});
 			test.append(h2).append(names).append(inputNames).append(pageBreak).append(email).append(inputEmail)
 				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(ifEmptyFields).append(submit);
-			
+
 			//Adding personal info at end of answers[]
 			var legalNotice = $("<div></div>").text("Личните Ви данни ще бъдат използвани само за целите на услугата ни и няма да бъдат предоставени на трети лица! ")
 								.addClass("row legal-notice");
 			var submit = $("<button></button>").attr({"onclick":"submit()"}).text("Потвърди")
 							.addClass("btn btn-4 btn-4b btn-back");
 			test.append(legalNotice).append(submit);
-			
+
 			pos = 0;
 			return false;
 		}
@@ -86,17 +86,17 @@
 									.attr({"name":"choices","onclick":strFunction});
 					buttonQuiz.addClass("btn btn-6 btn-6c btn-quiz");
 
-					
+
 
 					//For cities different than Sofia
 					if(i>1 && pos===0)
 						buttonQuiz.addClass("no-sofia")
 							.attr({"title":"За момента услугата на SitterZone се предлага само в София-град. Скоро ще предоставам нашата грижа и във Вашето населено място! "})
 							.addClass("text-nosofia");
-					
+
 					test.append(buttonQuiz).append($("<br>"));
-					
-					
+
+
 				}
 
 				//previous button question
@@ -128,11 +128,11 @@
 					test.append(buttonPrev).append($("<br>"));
 			break;
 		}
-		
+
 	}
 
 	function checkAnswer(answer){
-				if(typeof answer === "number")	
+				if(typeof answer === "number")
 					answers.push(questions[pos][answer]);
 				else
 					answers.push($("#quiz-text").val());

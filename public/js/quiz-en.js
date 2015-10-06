@@ -1,6 +1,6 @@
 "use strict"
 	var questions = [
-		[ "City of residence", "Sofia", "Plovdiv", "Burgas", "Varna", "St Zagora", "Ruse", "button" ],
+		[ "City of residence", "Sofia", "Plovdiv", "Varna", "Burgas", "Ruse", "St Zagora", "Pleven", "button" ],
 		[ "How many children do you have in your family?", "1", "2", "3", "4", "More than 4", "button" ],
 		[ "How old is the youngest one?", " > 1 year old", "1-2 years old", "2-3 years old", "3-4 years old.", "4-5 years old.", "Over 5 years old", "button" ],
 		[ "Have you ever used the services of a professional sitter and in what cases?", "No, I have not", "Yes, while I am at work", "Yes, when I go out in the evening", "Yes, when I cannot take my child on a business trip", "Yes, as extra help at home", "button" ],
@@ -15,7 +15,7 @@
 	var circle = new ProgressBar.Circle('#bar', {
 		color: '#21bdd6',
 		strokeWidth: 3,
-		trailWidth: 1,
+		//trailWidth: 1,
 		trailColor: '#ee4f6b',
 		trailWidth: 2,
 		duration: 1500,
@@ -90,9 +90,9 @@
 						buttonQuiz.addClass("no-sofia")
 							.attr({"title":"At this moment, the service of SitterZone is only provided in Sofia City. We will offer our care also in your town very soon! "})
 							.addClass("text-nosofia");
-					
+
 					test.append(buttonQuiz).append($("<br>"));
-					
+
 				}
 				if(pos){
 						var buttonPrev = $("<button></button>").text("BACK")
@@ -123,11 +123,11 @@
 
 			break;
 		}
-		
+
 	}
 
 	function checkAnswer(answer){
-				if(typeof answer === "number")	
+				if(typeof answer === "number")
 					answers.push(questions[pos][answer]);
 				else
 					answers.push($("#quiz-text").val());

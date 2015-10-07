@@ -31,7 +31,7 @@
 	});
 
 	 // init stuff here
-	var pos = 0, question;
+	var pos = 0, question, countSelections=0;
 	var answers=[],multipleAnswers=[];
 
 	function renderQuestion(){
@@ -54,10 +54,10 @@
 			var inputEmail = $("<input>").attr({"type":"email","id":"email","value":""});
 			var phone = $("<h4></h4>").text("Phone:");
 			var inputPhone = $("<input>").attr({"type":"text","id":"phone","value":""});
-			var ifEmptyFields = $("<h4></h4>").text("Please fill out all the fields.").addClass("invisible")
+			var emptyFields = $("<h4></h4>").text("Please fill out all the fields.").addClass("invisible")
 								.attr({"style":"border-style: solid; border-width: 1px; border-color: #ee4f6b; border-radius: 20px;","id":"warning"});
 			test.append(h2).append(names).append(inputNames).append(pageBreak).append(email).append(inputEmail)
-				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(ifEmptyFields).append(submit);
+				.append(pageBreak).append(phone).append(inputPhone).append(pageBreak).append(emptyFields).append(submit);
 
 			//Adding personal info at end of answers[]
 			var legalNotice = $("<div></div>").text("Your personal information will only be used for the purposes of our service and will not be provided to third parties! ")
@@ -121,7 +121,7 @@
 
 			break;
 			case("checkbox"):
-				var subTitle = $("<h4></h4>").text("Multiple choice question. Please click next, after you have made your choice.");
+				var subTitle = $("<h4></h4>").text("Multiple choice question (choose at least one). Please click next, after you have made your choice.");
 				test.append(subTitle);
 				for(var i=1;i<questions[pos].length-1; i+=1){
 					var strFunction = "selectAnswers("+i+")";
@@ -135,20 +135,14 @@
 
 				}
 
-				//next button question
-				var buttonNext = $("<button></button>").text("Next")
-						.attr({"name":"choices","onclick":"checkAnswer(\"checkbox\")"});
-				buttonNext.addClass("btn btn-4 btn-4b btn-back");
-				test.append(buttonNext).append($("<br>"));
-
 				//previous button question
 				if(pos){
 						var buttonPrev = $("<button></button>").text("Back")
 										.attr({"name":"choices","onclick":"goBack()"});
 						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
 						test.append(buttonPrev).append($("<br>"));
-				}
-					
+				}				
+
 			break;
 		}
 
@@ -157,13 +151,36 @@
 	//Simulates checkbox functionality and adds/subtracts selection
 	function selectAnswers(answer){
 		if( $("#"+answer+" > span").hasClass("invisible") ){
+			//Adds the unselected answer from temporary array.
 			multipleAnswers.push(questions[pos][answer]);
 			$("#"+answer+" > span").removeClass("invisible");
+			countSelections++;
 		}
 		else{
 			$("#"+answer+" > span").addClass("invisible");
 			//Deletes the unselected answer from temporary array.
 			multipleAnswers.splice(multipleAnswers.indexOf(questions[pos][answer]),1);
+			countSelections--;
+		}
+		remOrAddNext();
+
+	}
+
+	function remOrAddNext(){
+		var test = $("#test");
+		if(!countSelections){
+			$("#next").remove();
+		}
+		else{
+			//If button doesnt exist, create it
+			if(! $("#next").length){
+
+				//next button question exists, only if there are selected options
+				var buttonNext = $("<button></button>").text("Next")
+						.attr({"name":"choices","onclick":"checkAnswer(\"checkbox\")","id":"next"});
+				buttonNext.addClass("btn btn-4 btn-4b btn-back");
+				test.append(buttonNext);
+			}
 		}
 	}
 

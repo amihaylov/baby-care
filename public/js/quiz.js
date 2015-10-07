@@ -35,7 +35,7 @@
 	var answers=[],multipleAnswers=[];
 
 	function renderQuestion(){
-		test = $("#test");
+		var test = $("#test");
 		test.empty();
 
 		circle.animate((pos+1)/Number(questions.length+1), function(){
@@ -102,15 +102,15 @@
 						var buttonPrev = $("<button></button>").text("Назад")
 										.attr({"name":"choices","onclick":"goBack()"});
 						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
+						test.append(buttonPrev).append($("<br>"));
 				}
-				if(pos)
-					test.append(buttonPrev).append($("<br>"));
+
 			break;
 			case("text"):
 				var textArea = $("<textarea></textarea>").attr({"cols":50, "rows": 7, "maxlength": 500, "id": "quiz-text"})
 								.addClass("quiz-textarea");
 				test.append(textArea).append($("<br>"));
-				answers.push()
+				answers.push();
 				var strFunction = "checkAnswer(\"text\")";
 				var button = $("<button></button>").addClass("btn btn-4 btn-4a btn-back")
 							.attr({"name":"choices","onclick":strFunction}).text("НАПРЕД");
@@ -121,9 +121,9 @@
 						var buttonPrev = $("<button></button>").text("Назад")
 										.attr({"name":"choices","onclick":"goBack()"});
 						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
+						test.append(buttonPrev).append($("<br>"));
 				}
-				if(pos)
-					test.append(buttonPrev).append($("<br>"));
+
 			break;
 			case("checkbox"):
 				var subTitle = $("<h4></h4>").text("Въпрос с множество избираеми отговори. След като сте направили Вашия избор, моля натиснете напред.");
@@ -151,9 +151,8 @@
 						var buttonPrev = $("<button></button>").text("Назад")
 										.attr({"name":"choices","onclick":"goBack()"});
 						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
-				}
-				if(pos)
-					test.append(buttonPrev).append($("<br>"));
+						test.append(buttonPrev).append($("<br>"));
+				}				
 
 			break;
 		}

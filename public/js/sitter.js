@@ -17,6 +17,7 @@ $( document ).ready(function(){
 
       	SzoneApp.addSitter(sitter);
          $("#sitter-warning").addClass("invisible");
+         $("#sitter-submitted").removeClass("invisible");
          $(this).css("display","none");
       }
 

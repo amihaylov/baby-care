@@ -146,6 +146,7 @@
 			return true;
 		}
 		return false;
+
 	}
 
 	function goBack () {

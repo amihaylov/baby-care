@@ -5,7 +5,7 @@
 		[ "На каква възраст е най-малкото сред тях?", "Под 1 год.", "1-2год", "2-3год.", "3-4год.", "4-5год.", "Над 5 год.", "button" ],
 		[ "Използвали ли сте досега услугите на професионален детегледач и по какъв повод?", "Не", "Да, защото имам нужда от грижа за детето си, докато съм на работа", "Да, когато вечер излизам", "Да, когато пътувам и нямам възможност да бъда с детето си", "Да, когато съм вкъщи с детето си, но имам нужда от допълнителна помощ", "button" ],
 		[ "От какъв тип ангажираност на детегледача имате нужда?","На пълен работен ден/ до 10-12 часа на ден","На половин работен ден – до 4-6 часа на ден","Периодично – само при конкретна необходимост","Предпочитам да съжителства с нас","button"],
-		[ "Какъв вид дейности бихте поверили на професионален детегледач?","Приготвяне на храна за детето + хранене", "Грижа за хигиената", "Обучение/подготовка за училище", "Разходки навън ","Пътуване извън града","Игри с други деца навън или вкъщи","Придружаване/превоз (например, водене и вземане от училище/детска градина)","button"],
+		[ "Какъв вид дейности бихте поверили на професионален детегледач?","Приготвяне на храна за детето + хранене", "Грижа за хигиената", "Обучение/подготовка за училище", "Разходки навън ","Пътуване извън града","Игри с други деца навън или вкъщи","Придружаване/превоз (например, водене и вземане от училище/детска градина)","checkbox"],
 		[ "Какви са опасенията Ви, когато поверявате детето си на чужди грижи?","Да не бъде заразено с болест (грип, шарка и др.)","Да не бъде наранено дори и по случайност","Да не бъде малтретирано (физически или емоционално)", "Да не бъдат игнорирани нуждите му","Да не повлияе отрицателно на дисциплината/режима му","Други инциденти, свързани с дома ни или личните ни вещи", "button"],
 		[ "Каква е сумата, която сте готови да отделите за професионален детегледач според вида ангажираност и дейностите, които включва услугата?", "под 5 лв./час", "5-10 лв./ час", "10-15 лв./ час", "15-20 лв./час","до 20-25 лв./час", "button" ],
 		[ "Моля, споделете с нас допълнителни коментари или опасения относно грижите на детегледача!", "text" ]
@@ -31,9 +31,8 @@
 	});
 
 	 // init stuff here
-	var pos = 0, test, test_status, question;
-
-	var answers = [];
+	var pos = 0, question;
+	var answers=[],multipleAnswers=[];
 
 	function renderQuestion(){
 		test = $("#test");
@@ -126,15 +125,63 @@
 				if(pos)
 					test.append(buttonPrev).append($("<br>"));
 			break;
+			case("checkbox"):
+				var subTitle = $("<h4></h4>").text("Въпрос с множество избираеми отговори. След като сте направили Вашия избор, моля натиснете напред.");
+				test.append(subTitle);
+				for(var i=1;i<questions[pos].length-1; i+=1){
+					var strFunction = "selectAnswers("+i+")";
+					var checkBox = $("<span></span>").addClass("glyphicon glyphicon-ok invisible");
+					var buttonQuiz = $("<button></button>").text(questions[pos][i])
+									.attr({"name":"choices","onclick":strFunction,"id":i});
+					buttonQuiz.addClass("btn btn-6 btn-6c btn-quiz");
+					buttonQuiz.prepend(checkBox);
+
+					test.append(buttonQuiz).append($("<br>"));
+
+				}
+
+				//next button question
+				var buttonNext = $("<button></button>").text("Напред")
+						.attr({"name":"choices","onclick":"checkAnswer(\"checkbox\")"});
+				buttonNext.addClass("btn btn-4 btn-4b btn-back");
+				test.append(buttonNext).append($("<br>"));
+
+				//previous button question
+				if(pos){
+						var buttonPrev = $("<button></button>").text("Назад")
+										.attr({"name":"choices","onclick":"goBack()"});
+						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
+				}
+				if(pos)
+					test.append(buttonPrev).append($("<br>"));
+
+			break;
 		}
 
 	}
 
+	//Simulates checkbox functionality and adds/subtracts selection
+	function selectAnswers(answer){
+		if( $("#"+answer+" > span").hasClass("invisible") ){
+			multipleAnswers.push(questions[pos][answer]);
+			$("#"+answer+" > span").removeClass("invisible");
+		}
+		else{
+			$("#"+answer+" > span").addClass("invisible");
+			//Deletes the unselected answer from temporary array.
+			multipleAnswers.splice(multipleAnswers.indexOf(questions[pos][answer]),1);
+		}
+	}
+
 	function checkAnswer(answer){
-				if(typeof answer === "number")
-					answers.push(questions[pos][answer]);
-				else
-					answers.push($("#quiz-text").val());
+		if(typeof answer === "number")
+			answers.push(questions[pos][answer]);
+		else if(answer === "text")
+			answers.push($("#quiz-text").val());
+		else if(answer === "checkbox"){
+			answers.push(multipleAnswers.join("; "));
+			multipleAnswers = [];
+		}
 
 		pos++;
 		renderQuestion();

@@ -5,7 +5,7 @@
 		[ "How old is the youngest one?", " > 1 year old", "1-2 years old", "2-3 years old", "3-4 years old.", "4-5 years old.", "Over 5 years old", "button" ],
 		[ "Have you ever used the services of a professional sitter and in what cases?", "No, I have not", "Yes, while I am at work", "Yes, when I go out in the evening", "Yes, when I cannot take my child on a business trip", "Yes, as extra help at home", "button" ],
 		[ "For what kind of commitment do you need a sitter?"," Full-time or more than 10 hours a day","Part-time or less than 6 hours","Periodically, in particular cases/days","I need her/him to live at home with us.","button"],
-		[ "What kind of responsibilities would you entrust to your sitter?","Food preparation, nutrition of my child", "Hygiene care", "Education/mentoring/preparation for school","Walks","Out-of-the town trips","Play dates","For escort / transport (e.g. to and from school / kindergarten)","button"],
+		[ "What kind of responsibilities would you entrust to your sitter?","Food preparation, nutrition of my child", "Hygiene care", "Education/mentoring/preparation for school","Walks","Out-of-the town trips","Play dates","For escort / transport (e.g. to and from school / kindergarten)","checkbox"],
 		[ "What are your concerns when you are about to entrust your child to outside care?","Not to be infected with a disease (influenza, measles, etc.).","Not to be harmed, even by accident","Not to be abused (physically or emotionally)", "My child’s needs - not to be ignored in any way","Not to affect badly on the discipline / daily schedule of my child","Another incidents, related to our home or our personal belongings", "button"],
 		[ "What is the amount of money you are willing to spend on a professional babysitter regarding the type of engagement and activities that you are interested in?", "Less than 5 leva/hour", "5-10 leva/hour", "10-15 leva/hour", "15-20 leva/hour"," Up to 20-25 leva/hour", "button" ],
 		[ "Please, share with us any further comments or concerns that interest you", "text" ]
@@ -31,9 +31,8 @@
 	});
 
 	 // init stuff here
-	var pos = 0, test, test_status, question;
-
-	var answers = [];
+	var pos = 0, question;
+	var answers=[],multipleAnswers=[];
 
 	function renderQuestion(){
 		test = $("#test");
@@ -121,15 +120,63 @@
 					test.append(buttonPrev).append($("<br>"));
 
 			break;
+			case("checkbox"):
+				var subTitle = $("<h4></h4>").text("Multiple choice question. Please click next, after you have made your choice.");
+				test.append(subTitle);
+				for(var i=1;i<questions[pos].length-1; i+=1){
+					var strFunction = "selectAnswers("+i+")";
+					var checkBox = $("<span></span>").addClass("glyphicon glyphicon-ok invisible");
+					var buttonQuiz = $("<button></button>").text(questions[pos][i])
+									.attr({"name":"choices","onclick":strFunction,"id":i});
+					buttonQuiz.addClass("btn btn-6 btn-6c btn-quiz");
+					buttonQuiz.prepend(checkBox);
+
+					test.append(buttonQuiz).append($("<br>"));
+
+				}
+
+				//next button question
+				var buttonNext = $("<button></button>").text("Next")
+						.attr({"name":"choices","onclick":"checkAnswer(\"checkbox\")"});
+				buttonNext.addClass("btn btn-4 btn-4b btn-back");
+				test.append(buttonNext).append($("<br>"));
+
+				//previous button question
+				if(pos){
+						var buttonPrev = $("<button></button>").text("Back")
+										.attr({"name":"choices","onclick":"goBack()"});
+						buttonPrev.addClass("btn btn-4 btn-4b btn-back");
+				}
+				if(pos)
+					test.append(buttonPrev).append($("<br>"));
+
+			break;
 		}
 
 	}
 
+	//Simulates checkbox functionality and adds/subtracts selection
+	function selectAnswers(answer){
+		if( $("#"+answer+" > span").hasClass("invisible") ){
+			multipleAnswers.push(questions[pos][answer]);
+			$("#"+answer+" > span").removeClass("invisible");
+		}
+		else{
+			$("#"+answer+" > span").addClass("invisible");
+			//Deletes the unselected answer from temporary array.
+			multipleAnswers.splice(multipleAnswers.indexOf(questions[pos][answer]),1);
+		}
+	}
+
 	function checkAnswer(answer){
-				if(typeof answer === "number")
-					answers.push(questions[pos][answer]);
-				else
-					answers.push($("#quiz-text").val());
+		if(typeof answer === "number")
+			answers.push(questions[pos][answer]);
+		else if(answer === "text")
+			answers.push($("#quiz-text").val());
+		else if(answer === "checkbox"){
+			answers.push(multipleAnswers.join("; "));
+			multipleAnswers = [];
+		}
 
 		pos++;
 		renderQuestion();
